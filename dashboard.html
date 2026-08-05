@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body class="dashboard-page">
+
+<div class="dashboard-wrapper">
+    <!-- ================= Desktop Sidebar ================= -->
+
+    <aside class="sidebar">
+
+        <!-- Logo -->
+        <div class="sidebar-logo">
+
+            <img src="img/logo.png" alt="Logo">
+
+            <h4>Sohail Mobile</h4>
+
+        </div>
+
+        <!-- Sidebar Menu -->
+
+        <ul class="sidebar-menu">
+
+            <li class="active">
+                <a href="dashboard.html">
+                    <i class="bi bi-house-door"></i>
+                    Dashboard
+                </a>
+            </li>
+
+            <li class="menu-heading">Vendor Management</li>
+
+            <li>
+                <a href="manage-vendor.html">
+                    <i class="bi bi-person"></i>
+                    Manage Vendor
+                </a>
+            </li>
+
+            <li class="menu-heading">
+                Customer Relationship Management
+            </li>
+
+            <li>
+                <a href="manage-customer.html">
+                    <i class="bi bi-person"></i>
+                    Manage Customer
+                </a>
+            </li>
+
+            <li class="menu-heading">
+                Inventory Management
+            </li>
+
+            <li><a href="category-listing.html"><i class="bi bi-box"></i>Category Listing</a></li>
+
+            <li><a href="brand-model.html"><i class="bi bi-phone"></i>Brand & Model</a></li>
+
+            <li><a href="listing-product.html"><i class="bi bi-list"></i>Listing Product</a></li>
+
+            <li><a href="stock-listing.html"><i class="bi bi-archive"></i>Stock Listing</a></li>
+
+            <li class="menu-heading">
+                Sales & Purchase
+            </li>
+
+            <li><a href="sales-report.html"><i class="bi bi-cart"></i>Sales Report</a></li>
+
+            <li><a href="sales.html"><i class="bi bi-cart-check"></i>Sales</a></li>
+
+            <li><a href="sales-return.html"><i class="bi bi-arrow-return-left"></i>Sales Return</a></li>
+
+            <li><a href="purchase-report.html"><i class="bi bi-bag"></i>Purchase Report</a></li>
+
+            <li><a href="purchase.html"><i class="bi bi-bag-check"></i>Purchase</a></li>
+
+            <li><a href="purchase-return.html"><i class="bi bi-arrow-return-left"></i>Purchase Return</a></li>
+
+            <li class="menu-heading">
+                Profit & Loss Management
+            </li>
+
+            <li><a href="open-balance-sheet.html"><i class="bi bi-graph-up"></i>Open Balance Sheet</a></li>
+
+            <li><a href="pnl-report.html"><i class="bi bi-bar-chart"></i>PnL Report</a></li>
+
+            <li class="menu-heading">
+                Expenses Management
+            </li>
+
+            <li><a href="manage-expense.html"><i class="bi bi-wallet2"></i>Manage Expense</a></li>
+
+            <li class="menu-heading">
+                Role Management
+            </li>
+
+            <li><a href="manage-roles.html"><i class="bi bi-person-gear"></i>Manage Roles</a></li>
+
+        </ul>
+
+        <!-- Bottom Buttons -->
+
+        <div class="sidebar-footer">
+            <a href="account-setting.html" class="account-btn">
+
+                <i class="bi bi-gear"></i>
+
+                Account Setting
+
+            </a>
+
+            <button class="logout-btn">
+
+                <i class="bi bi-box-arrow-right"></i>
+
+                Logout
+
+            </button>
+
+        </div>
+
+    </aside>
+
+    <div class="main-area">
+        <header class="top-navbar">
+            <div class="navbar-left">
+                <button id="sidebarToggle" class="toggle-btn" type="button" aria-label="Toggle Sidebar">
+                    <i class="bi bi-list"></i>
+                </button>
+
+                <div class="search-box">
+                    <i class="bi bi-search"></i>
+                    <input type="text" placeholder="Search">
+                </div>
+            </div>
+
+            <div class="navbar-right">
+                <button class="bell-btn">
+                    <i class="bi bi-bell"></i>
+                </button>
+                <img src="img/profile.png" class="profile-img" alt="">
+            </div>
+        </header>
+
+
+
+
+ <!-- Main Content Section -->       
+         <!-- ================= Main ================= -->
+
+    <main class="main-content">
+
+        <!-- Dashboard Content -->
+
+        <section class="content-area">
+
+            <div class="dashboard-panel">
+
+                <div class="dashboard-panel-header">
+                    <h2>POS &amp; Inventory</h2>
+                    <div class="dashboard-panel-header-right">
+                        <span class="small-chip">Today</span>
+                    </div>
+                </div>
+
+                <div class="summary-grid">
+                    <div class="summary-card blue">
+                        <span>Net Sale</span>
+                        <strong>PKR 40,000</strong>
+                    </div>
+                    <div class="summary-card purple">
+                        <span>Total Purchase</span>
+                        <strong>PKR 40,000</strong>
+                    </div>
+                    <div class="summary-card pink">
+                        <span>Total Expense</span>
+                        <strong>PKR 40,000</strong>
+                    </div>
+                    <div class="summary-card orange">
+                        <span>PnL(Profit/Lose)</span>
+                        <strong>PKR 40,000</strong>
+                    </div>
+                </div>
+
+                <div class="chart-card">
+                    <div class="chart-card-header">
+                        <h3>Sales/Purchase/Expense/PnL</h3>
+                        <div class="chart-range">
+                            <button type="button">Yearly</button>
+                            <button type="button">Monthly</button>
+                            <button type="button">Week</button>
+                        </div>
+                    </div>
+
+                    <div class="chart-area">
+                        <div class="chart-line chart-line-blue"></div>
+                        <div class="chart-line chart-line-purple"></div>
+                        <div class="chart-line chart-line-green"></div>
+                        <div class="chart-line chart-line-orange"></div>
+                    </div>
+
+                    <div class="chart-legend">
+                        <span><i class="legend-dot blue"></i>Sales</span>
+                        <span><i class="legend-dot purple"></i>Purchase</span>
+                        <span><i class="legend-dot green"></i>Expense</span>
+                        <span><i class="legend-dot orange"></i>PnL(Profit/Lose)</span>
+                    </div>
+                </div>
+
+                <div class="table-grid">
+                    <div class="table-card">
+                        <div class="table-card-header">
+                            <h3>Top Vendors</h3>
+                            <a href="#">View All</a>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="table table-striped align-middle mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>SL</th>
+                                        <th>Vendor ID</th>
+                                        <th>Vendor Name</th>
+                                        <th>Payable Amount</th>
+                                        <th>Paid Amount</th>
+                                        <th>Due Amount</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>TYRPNVT-0006</td>
+                                        <td>Sara Khan</td>
+                                        <td>Rs 450,000.00</td>
+                                        <td>Rs 30,000.00</td>
+                                        <td>Rs 15,000.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>TYRPNVT-0002</td>
+                                        <td>Hamza Iqbal</td>
+                                        <td>Rs 180,000.00</td>
+                                        <td>Rs 15,500.00</td>
+                                        <td>Rs 48,300.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>TYRPNVT-0003</td>
+                                        <td>Asad Ullah</td>
+                                        <td>Rs 250,000.00</td>
+                                        <td>Rs 67,000.00</td>
+                                        <td>Rs 98,300.00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="table-card">
+                        <div class="table-card-header">
+                            <h3>Top Customer</h3>
+                            <a href="#">View All</a>
+                        </div>
+
+                        <div class="table-responsive">
+                            <table class="table table-striped align-middle mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>SL</th>
+                                        <th>Customer ID</th>
+                                        <th>Customer Name</th>
+                                        <th>Payable Amount</th>
+                                        <th>Paid Amount</th>
+                                        <th>Due Amount</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>TYRPNVT-0006</td>
+                                        <td>Ali Ahmed</td>
+                                        <td>Rs 50,000.00</td>
+                                        <td>Rs 50,000.00</td>
+                                        <td>Rs 0.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>TYRPNVT-0002</td>
+                                        <td>Hamza Iqbal</td>
+                                        <td>Rs 90,000.00</td>
+                                        <td>Rs 17,810.00</td>
+                                        <td>Rs 150.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>TYRPNVT-0003</td>
+                                        <td>Asad Ullah</td>
+                                        <td>Rs 90,000.00</td>
+                                        <td>Rs 200.00</td>
+                                        <td>Rs 300.00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+    </div>
+
+</div>
+
+<!-- Bootstrap Js -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="js/script.js"></script>
+
+</body>
+
+</html>
