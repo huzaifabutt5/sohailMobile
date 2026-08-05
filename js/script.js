@@ -40,12 +40,14 @@ document.addEventListener('DOMContentLoaded', function () {
     // Highlight the current page in the sidebar
     const sidebarLinks = document.querySelectorAll('.sidebar-menu li a');
     const currentPage = window.location.pathname.split('/').pop();
+    const vendorPages = ['manage-vendor.html', 'add-new-vendor.html'];
 
     sidebarLinks.forEach(link => {
         const listItem = link.closest('li');
         const linkPage = link.getAttribute('href');
+        const isVendorPageActive = vendorPages.includes(currentPage) && linkPage === 'manage-vendor.html';
 
-        if (linkPage === currentPage || (linkPage === 'dashboard.html' && currentPage === '')) {
+        if (linkPage === currentPage || (linkPage === 'dashboard.html' && currentPage === '') || isVendorPageActive) {
             listItem.classList.add('active');
         } else {
             listItem.classList.remove('active');

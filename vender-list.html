@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vender List</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body class="dashboard-page">
+
+<div class="dashboard-wrapper">
+    <!-- ================= Desktop Sidebar ================= -->
+
+    <aside class="sidebar">
+
+        <!-- Logo -->
+        <div class="sidebar-logo">
+
+            <img src="img/logo.png" alt="Logo">
+
+            <h4>Sohail Mobile</h4>
+
+        </div>
+
+        <!-- Sidebar Menu -->
+
+        <ul class="sidebar-menu">
+
+            <li class="active">
+                <a href="dashboard.html">
+                    <i class="bi bi-house-door"></i>
+                    Dashboard
+                </a>
+            </li>
+
+            <li class="menu-heading">Vendor Management</li>
+
+            <li>
+                <a href="manage-vendor.html">
+                    <i class="bi bi-person"></i>
+                    Manage Vendor
+                </a>
+            </li>
+
+            <li class="menu-heading">
+                Customer Relationship Management
+            </li>
+
+            <li>
+                <a href="manage-customer.html">
+                    <i class="bi bi-person"></i>
+                    Manage Customer
+                </a>
+            </li>
+
+            <li class="menu-heading">
+                Inventory Management
+            </li>
+
+            <li><a href="category-listing.html"><i class="bi bi-box"></i>Category Listing</a></li>
+
+            <li><a href="brand-model.html"><i class="bi bi-phone"></i>Brand & Model</a></li>
+
+            <li><a href="listing-product.html"><i class="bi bi-list"></i>Listing Product</a></li>
+
+            <li><a href="stock-listing.html"><i class="bi bi-archive"></i>Stock Listing</a></li>
+
+            <li class="menu-heading">
+                Sales & Purchase
+            </li>
+
+            <li><a href="sales-report.html"><i class="bi bi-cart"></i>Sales Report</a></li>
+
+            <li><a href="sales.html"><i class="bi bi-cart-check"></i>Sales</a></li>
+
+            <li><a href="sales-return.html"><i class="bi bi-arrow-return-left"></i>Sales Return</a></li>
+
+            <li><a href="purchase-report.html"><i class="bi bi-bag"></i>Purchase Report</a></li>
+
+            <li><a href="purchase.html"><i class="bi bi-bag-check"></i>Purchase</a></li>
+
+            <li><a href="purchase-return.html"><i class="bi bi-arrow-return-left"></i>Purchase Return</a></li>
+
+            <li class="menu-heading">
+                Profit & Loss Management
+            </li>
+
+            <li><a href="open-balance-sheet.html"><i class="bi bi-graph-up"></i>Open Balance Sheet</a></li>
+
+            <li><a href="pnl-report.html"><i class="bi bi-bar-chart"></i>PnL Report</a></li>
+
+            <li class="menu-heading">
+                Expenses Management
+            </li>
+
+            <li><a href="manage-expense.html"><i class="bi bi-wallet2"></i>Manage Expense</a></li>
+
+            <li class="menu-heading">
+                Role Management
+            </li>
+
+            <li><a href="manage-roles.html"><i class="bi bi-person-gear"></i>Manage Roles</a></li>
+
+        </ul>
+
+        <!-- Bottom Buttons -->
+
+        <div class="sidebar-footer">
+            <a href="account-setting.html" class="account-btn">
+
+                <i class="bi bi-gear"></i>
+
+                Account Setting
+
+            </a>
+
+            <button class="logout-btn">
+
+                <i class="bi bi-box-arrow-right"></i>
+
+                Logout
+
+            </button>
+
+        </div>
+
+    </aside>
+
+    <div class="main-area">
+        <header class="top-navbar">
+            <div class="navbar-left">
+                <button id="sidebarToggle" class="toggle-btn" type="button" aria-label="Toggle Sidebar">
+                    <i class="bi bi-list"></i>
+                </button>
+
+                <div class="search-box">
+                    <i class="bi bi-search"></i>
+                    <input type="text" placeholder="Search">
+                </div>
+            </div>
+
+            <div class="navbar-right">
+                <button class="bell-btn">
+                    <i class="bi bi-bell"></i>
+                </button>
+                <img src="img/profile.png" class="profile-img" alt="">
+            </div>
+        </header>
+
+
+
+
+ <!-- Main Content Section -->       
+        <main class="main-content">
+            <section class="content-area">
+                <div class="view-vendor-header">
+                    <h1>View Vendor</h1>
+                    <span class="page-badge">Dashboard - Vendor Management</span>
+                </div>
+
+                <div class="summary-grid">
+                    <div class="summary-card">
+                    <div class="summary-content">
+                    <h6 class="summary-title">Today Purchase</h6>
+                    <h2 class="summary-price">$40,000</h2>
+                </div>
+
+    <div class="summary-icon">
+        <i class="bi bi-cart3"></i>
+    </div>
+
+</div>
+
+                    <div class="summary-card summary-card-purple">
+
+    <div class="summary-content">
+        <h6 class="summary-title">Today Purchase Return</h6>
+        <h2 class="summary-price">$40,000</h2>
+    </div>
+
+    <div class="summary-icon">
+        <i class="bi bi-cart3"></i>
+    </div>
+
+</div>
+
+                    <div class="summary-card summary-card-warning">
+                    <div class="summary-content">
+                    <h6 class="summary-title">Remaining Payment</h6>
+                    <h2 class="summary-price">$40,000</h2>
+                    <button class="btn pay-btn">
+                    <i class="bi bi-handshake"></i>
+                    Pay to Vendor
+                    </button>
+                    </div>
+                    <div class="summary-icon">
+                    <i class="bi bi-cart3"></i>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="purchase-report-card">
+                    <div class="report-head">
+                        <h2>Purchase Report</h2>
+                    </div>
+
+                    <div class="report-toolbar">
+                        <div class="entries-box">
+                            <div class="entries-select-wrap">
+                                <select id="entries" class="form-select form-select-sm">
+                                    <option selected>10</option>
+                                    <option>20</option>
+                                    <option>50</option>
+                                </select>
+                            </div>
+                            <span>entries per page</span>
+                        </div>
+
+                        <div class="report-search-area">
+                            <label for="searchProduct">Search:</label>
+                            <input id="searchProduct" type="text" placeholder="Search Product">
+                        </div>
+                    </div>
+
+<div class="table-wrap table-responsive" style="overflow: hidden;">
+                        <table class="table purchase-table align-middle mb-0">
+                            <thead>
+                                <tr>
+                                    <th>SL</th>
+                                    <th>Date</th>
+                                    <th>Invoice ID</th>
+                                    <th>Products</th>
+                                    <th>Purchase/Return</th>
+                                    <th>Transaction Type</th>
+                                    <th>Transaction ID</th>
+                                    <th>Payable Amount</th>
+                                    <th>Paid Amount</th>
+                                    <th>Open Balance</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>June 15,2026</td>
+                                    <td>N/A</td>
+                                    <td>N/A</td>
+                                    <td>N/A</td>
+                                    <td>Bank Transfer</td>
+                                    <td>Trx 6tbgGY7189</td>
+                                    <td>$40,000</td>
+                                    <td>$10,000</td>
+                                    <td>$30,000</td>
+                                    <td>
+                                        <div class="action-group">
+                                            <button type="button" class="action-btn print-btn" aria-label="Print"><i class="bi bi-printer"></i></button>
+                                            <button type="button" class="action-btn view-btn" aria-label="View"><i class="bi bi-eye"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>June 15,2026</td>
+                                    <td>Invoice - 0001</td>
+                                    <td>5 Products</td>
+                                    <td><span class="pill-tag">Purchase</span></td>
+                                    <td>Cash</td>
+                                    <td>N/A</td>
+                                    <td>$40,000</td>
+                                    <td>$10,000</td>
+                                    <td>$30,000</td>
+                                    <td>
+                                        <div class="action-group">
+                                            <button type="button" class="action-btn print-btn" aria-label="Print"><i class="bi bi-printer"></i></button>
+                                            <button type="button" class="action-btn view-btn" aria-label="View"><i class="bi bi-eye"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>June 15,2026</td>
+                                    <td>Invoice -0002</td>
+                                    <td>7 Products</td>
+                                    <td><span class="pill-tag">Purchase</span></td>
+                                    <td>Cash</td>
+                                    <td>N/A</td>
+                                    <td>$40,000</td>
+                                    <td>$10,000</td>
+                                    <td>$30,000</td>
+                                    <td>
+                                        <div class="action-group">
+                                            <button type="button" class="action-btn print-btn" aria-label="Print"><i class="bi bi-printer"></i></button>
+                                            <button type="button" class="action-btn view-btn" aria-label="View"><i class="bi bi-eye"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>June 15,2026</td>
+                                    <td>Invoice -0003</td>
+                                    <td>10 Products</td>
+                                    <td><span class="pill-tag">Purchase</span></td>
+                                    <td>Cash</td>
+                                    <td>N/A</td>
+                                    <td>$40,000</td>
+                                    <td>$10,000</td>
+                                    <td>$30,000</td>
+                                    <td>
+                                        <div class="action-group">
+                                            <button type="button" class="action-btn print-btn" aria-label="Print"><i class="bi bi-printer"></i></button>
+                                            <button type="button" class="action-btn view-btn" aria-label="View"><i class="bi bi-eye"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>June 15,2026</td>
+                                    <td>Invoice -0004</td>
+                                    <td>15 Products</td>
+                                    <td><span class="pill-tag">Purchase</span></td>
+                                    <td>Cash</td>
+                                    <td>N/A</td>
+                                    <td>$40,000</td>
+                                    <td>$10,000</td>
+                                    <td>$30,000</td>
+                                    <td>
+                                        <div class="action-group">
+                                            <button type="button" class="action-btn print-btn" aria-label="Print"><i class="bi bi-printer"></i></button>
+                                            <button type="button" class="action-btn view-btn" aria-label="View"><i class="bi bi-eye"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>June 15,2026</td>
+                                    <td>Invoice -0005</td>
+                                    <td>20 Products</td>
+                                    <td><span class="pill-tag">Purchase</span></td>
+                                    <td>Cash</td>
+                                    <td>N/A</td>
+                                    <td>$40,000</td>
+                                    <td>$10,000</td>
+                                    <td>$30,000</td>
+                                    <td>
+                                        <div class="action-group">
+                                            <button type="button" class="action-btn print-btn" aria-label="Print"><i class="bi bi-printer"></i></button>
+                                            <button type="button" class="action-btn view-btn" aria-label="View"><i class="bi bi-eye"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>June 15,2026</td>
+                                    <td>Invoice -0006</td>
+                                    <td>25 Products</td>
+                                    <td><span class="pill-tag">Purchase</span></td>
+                                    <td>Cash</td>
+                                    <td>N/A</td>
+                                    <td>$40,000</td>
+                                    <td>$10,000</td>
+                                    <td>$30,000</td>
+                                    <td>
+                                        <div class="action-group">
+                                            <button type="button" class="action-btn print-btn" aria-label="Print"><i class="bi bi-printer"></i></button>
+                                            <button type="button" class="action-btn view-btn" aria-label="View"><i class="bi bi-eye"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td>June 15,2026</td>
+                                    <td>Invoice -0007</td>
+                                    <td>30 Products</td>
+                                    <td><span class="pill-tag">Purchase</span></td>
+                                    <td>Cash</td>
+                                    <td>N/A</td>
+                                    <td>$40,000</td>
+                                    <td>$10,000</td>
+                                    <td>$30,000</td>
+                                    <td>
+                                        <div class="action-group">
+                                            <button type="button" class="action-btn print-btn" aria-label="Print"><i class="bi bi-printer"></i></button>
+                                            <button type="button" class="action-btn view-btn" aria-label="View"><i class="bi bi-eye"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>9</td>
+                                    <td>June 15,2026</td>
+                                    <td>Invoice -0008</td>
+                                    <td>50 Products</td>
+                                    <td><span class="pill-tag">Purchase</span></td>
+                                    <td>Cash</td>
+                                    <td>N/A</td>
+                                    <td>$40,000</td>
+                                    <td>$10,000</td>
+                                    <td>$30,000</td>
+                                    <td>
+                                        <div class="action-group">
+                                            <button type="button" class="action-btn print-btn" aria-label="Print"><i class="bi bi-printer"></i></button>
+                                            <button type="button" class="action-btn view-btn" aria-label="View"><i class="bi bi-eye"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>10</td>
+                                    <td>June 15,2026</td>
+                                    <td>Invoice -0001</td>
+                                    <td>100 Products</td>
+                                    <td><span class="pill-tag">Purchase</span></td>
+                                    <td>Cash</td>
+                                    <td>N/A</td>
+                                    <td>$40,000</td>
+                                    <td>$10,000</td>
+                                    <td>$30,000</td>
+                                    <td>
+                                        <div class="action-group">
+                                            <button type="button" class="action-btn print-btn" aria-label="Print"><i class="bi bi-printer"></i></button>
+                                            <button type="button" class="action-btn view-btn" aria-label="View"><i class="bi bi-eye"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="purchase-pagination">
+                        <span>Showing 1 to 10 of 20 entries</span>
+                        <div class="page-buttons">
+                            <button type="button" class="page-arrow"><i class="bi bi-chevron-left"></i></button>
+                            <button type="button" class="page-num active">1</button>
+                            <button type="button" class="page-num">2</button>
+                            <button type="button" class="page-arrow"><i class="bi bi-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+</div>
+
+<!-- Bootstrap Js -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="js/script.js"></script>
+
+</body>
+
+</html>
