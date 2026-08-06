@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Dashboard</title>
+    <title>Category Listing</title>
 
     <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -38,9 +38,9 @@
 
         <!-- Sidebar Menu -->
 
-        <ul class="sidebar-menu">
+<ul class="sidebar-menu">
 
-            <li class="active">
+            <li>
                 <a href="dashboard.html">
                     <i class="bi bi-house-door"></i>
                     Dashboard
@@ -71,7 +71,7 @@
                 Inventory Management
             </li>
 
-            <li><a href="category-listing.html"><i class="bi bi-box"></i>Category Listing</a></li>
+<li class="active"><a href="category-listing.html"><i class="bi bi-box"></i>Category Listing</a></li>
 
             <li><a href="brand-model.html"><i class="bi bi-phone"></i>Brand & Model</a></li>
 
@@ -165,58 +165,37 @@
 
 
  <!-- Main Content Section -->       
-         <!-- ================= Main ================= -->
-
-    <main class="main-content">
-
-        <!-- Dashboard Content -->
-
-        <section class="content-area">
-
-            <div class="dashboard-panel">
-
-                <div class="dashboard-panel-header">
-                    <h2>POS &amp; Inventory</h2>
-                    <div class="dashboard-panel-header-right">
-                        <span class="small-chip">Today</span>
-                    </div>
+        <main class="main-content">
+            <!-- Main content removed per request -->
+            <section class="content-area">
+                <div class="page-title-row">
+                    <h1 class="page-title">Category Listing</h1>
+                    <span class="page-badge">Dashboard - Inventory Management</span>
                 </div>
 
-             <div class="summary-grids">
+                <div class="table-grid">
+                <div class="table-card">
+                        <div class="vendor-panels-top">
+                    <h2>All Category</h2>
+                    <button type="submit" class="add-vendor-btn"
+                    onclick="location.href='add-new-category.html'">+ Add New Category</button>
+                </div>
+                <div class="vendor-toolbar">
+                    <div class="entries-box">
+                        <div class="entries-select-wrap">
+                            <select id="entries" class="form-select form-select-sm">
+                                <option selected>10</option>
+                                <option>20</option>
+                                <option>50</option>
+                            </select>
+                        </div>
+                        <span>entries per page</span>
+                    </div>
 
-    <div class="summary-cards blue">
-        <span>Net Sale</span>
-        <strong>PKR40,000</strong>
-    </div>
-
-    <div class="summary-cards purple">
-        <span>Total Purchase</span>
-        <strong>PKR40,000</strong>
-    </div>
-
-    <div class="summary-cards pink">
-        <span>Total Expense</span>
-        <strong>PKR40,000</strong>
-    </div>
-
-    <div class="summary-cards orange">
-        <span>PnL(Profit/Lose)</span>
-        <strong>PKR40,000</strong>
-    </div>
-
-</div>
-
-                <div class="chart-card">
-                    <div class="chart-card-header">
-                        <h3>Sales/Purchase/Expense/PnL</h3>
-                        <div class="chart-range">
-    <select class="form-select form-select-sm">
-        <option>Yearly</option>
-        <option>Monthly</option>
-        <option>Week</option>
-    </select>
-
-    <button class="btn btn-primary" id="calendarBtn">
+                    <div class="search-box-inline">
+                        <label for="searchVendor">Search:</label>
+                        <input id="searchVendor" type="text" placeholder="Search Category">
+                        <button class="btn btn-primary" id="calendarBtn">
     <i class="bi bi-calendar-event"></i>
 </button>
     <div class="modal fade" id="dateFilterModal" tabindex="-1">
@@ -259,124 +238,72 @@
         </div>
     </div>
 </div>
-</div>
                     </div>
-
-                   <div class="chart-area">
-                   <div id="salesChart"></div>
-                   </div>
-
-                    <div class="chart-legend">
-                        <span><i class="legend-dot blue"></i>Sales</span>
-                        <span><i class="legend-dot purple"></i>Purchase</span>
-                        <span><i class="legend-dot green"></i>Expense</span>
-                        <span><i class="legend-dot orange"></i>PnL(Profit/Lose)</span>
-                    </div>
+                    
                 </div>
 
-                <div class="table-grid">
-                    <div class="table-card mb-4">
-                        <div class="table-card-header mb-3">
-                            <h3 class="fw-bold">Top Vendors</h3>
-                            <a href="#">View All</a>
-                        </div>
-
-                        <div class="table-responsive">
-                            <table class="table align-middle mb-0 custom-table mb-4">
-                                <thead>
-                                    <tr>
-                                        <th>SL</th>
-                                        <th>Vendor ID</th>
-                                        <th>Vendor Name</th>
-                                        <th>Payable Amount</th>
-                                        <th>Paid Amount</th>
-                                        <th>Due Amount</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>TYRPNVT-0006</td>
-                                        <td>Sara Khan</td>
-                                        <td>Rs 450,000.00</td>
-                                        <td>Rs 30,000.00</td>
-                                        <td>Rs 15,000.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>TYRPNVT-0002</td>
-                                        <td>Hamza Iqbal</td>
-                                        <td>Rs 180,000.00</td>
-                                        <td>Rs 15,500.00</td>
-                                        <td>Rs 48,300.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td>TYRPNVT-0003</td>
-                                        <td>Asad Ullah</td>
-                                        <td>Rs 250,000.00</td>
-                                        <td>Rs 67,000.00</td>
-                                        <td>Rs 98,300.00</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-
-                    <div class="table-card">
-                        <div class="table-card-header">
-                            <h3>Top Customer</h3>
-                            <a href="#">View All</a>
-                        </div>
-
-                        <div class="table-responsive">
+                        <div class="table-responsive mb-3">
                             <table class="table table-striped align-middle mb-0">
                                 <thead>
                                     <tr>
                                         <th>SL</th>
-                                        <th>Customer ID</th>
-                                        <th>Customer Name</th>
-                                        <th>Payable Amount</th>
-                                        <th>Paid Amount</th>
-                                        <th>Due Amount</th>
+                                        <th>Date</th>
+                                        <th>Category Name</th>
+                                        <th>Description</th>
+                                        <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
                                         <td>1</td>
-                                        <td>TYRPNVT-0006</td>
+                                        <td>2024-01-15</td>
                                         <td>Ali Ahmed</td>
-                                        <td>Rs 50,000.00</td>
-                                        <td>Rs 50,000.00</td>
-                                        <td>Rs 0.00</td>
+                                        <td>Sample description for Ali Ahmed</td>
+                                        <td>
+                                            <a href="#" class="action-btn view-btn" title="View"><i class="bi bi-eye"></i></a>
+                                            <a href="#" class="action-btn edit-btn" title="Edit"><i class="bi bi-pencil-square"></i></a>
+                                            <a href="#" class="action-btn delete-btn" title="Delete"><i class="bi bi-trash"></i></a>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>2</td>
-                                        <td>TYRPNVT-0002</td>
+                                        <td>2024-02-20</td>
                                         <td>Hamza Iqbal</td>
-                                        <td>Rs 90,000.00</td>
-                                        <td>Rs 17,810.00</td>
-                                        <td>Rs 150.00</td>
+                                        <td>Sample description for Hamza Iqbal</td>
+                                        <td>
+                                            <a href="#" class="action-btn view-btn" title="View"><i class="bi bi-eye"></i></a>
+                                            <a href="#" class="action-btn edit-btn" title="Edit"><i class="bi bi-pencil-square"></i></a>
+                                            <a href="#" class="action-btn delete-btn" title="Delete"><i class="bi bi-trash"></i></a>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>3</td>
-                                        <td>TYRPNVT-0003</td>
+                                        <td>2024-03-10</td>
                                         <td>Asad Ullah</td>
-                                        <td>Rs 90,000.00</td>
-                                        <td>Rs 200.00</td>
-                                        <td>Rs 300.00</td>
+                                        <td>Sample description for Asad Ullah</td>
+                                        <td>
+                                            <a href="#" class="action-btn view-btn" title="View"><i class="bi bi-eye"></i></a>
+                                            <a href="#" class="action-btn edit-btn" title="Edit"><i class="bi bi-pencil-square"></i></a>
+                                            <a href="#" class="action-btn delete-btn" title="Delete"><i class="bi bi-trash"></i></a>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
+                        <div class="vendor-pagination">
+                    <span>Showing 1 to 10 of 20 entries</span>
+                    <div class="page-buttons">
+                        <button type="button" class="page-arrow"><i class="bi bi-chevron-left"></i></button>
+                        <button type="button" class="page-num active">1</button>
+                        <button type="button" class="page-num">2</button>
+                        <button type="button" class="page-arrow"><i class="bi bi-chevron-right"></i></button>
+                    </div>
+                </div>
                     </div>
                 </div>
 
-            </div>
-
-        </section>
-
-    </main>
+            </section>
+        </main>
     </div>
 
 </div>
@@ -384,8 +311,6 @@
 <!-- Bootstrap Js -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- Apex Charts -->
-<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 <script src="js/script.js"></script>
 
 </body>
