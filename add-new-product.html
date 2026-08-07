@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Add New Product</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body class="dashboard-page">
+
+<div class="dashboard-wrapper">
+    <!-- ================= Desktop Sidebar ================= -->
+
+    <aside class="sidebar">
+
+        <!-- Logo -->
+        <div class="sidebar-logo">
+
+            <img src="img/logo.png" alt="Logo">
+
+            <h4>Sohail Mobile</h4>
+
+        </div>
+
+        <!-- Sidebar Menu -->
+
+        <ul class="sidebar-menu">
+
+            <li class="active">
+                <a href="dashboard.html">
+                    <i class="bi bi-house-door"></i>
+                    Dashboard
+                </a>
+            </li>
+
+            <li class="menu-heading">Vendor Management</li>
+
+            <li>
+                <a href="manage-vendor.html">
+                    <i class="bi bi-person"></i>
+                    Manage Vendor
+                </a>
+            </li>
+
+            <li class="menu-heading">
+                Customer Relationship Management
+            </li>
+
+            <li>
+                <a href="manage-customer.html">
+                    <i class="bi bi-person"></i>
+                    Manage Customer
+                </a>
+            </li>
+
+            <li class="menu-heading">
+                Inventory Management
+            </li>
+
+            <li><a href="category-listing.html"><i class="bi bi-box"></i>Category Listing</a></li>
+
+            <li><a href="brand-model.html"><i class="bi bi-phone"></i>Brand & Model</a></li>
+
+            <li><a href="listing-product.html"><i class="bi bi-list"></i>Listing Product</a></li>
+
+            <li><a href="stock-listing.html"><i class="bi bi-archive"></i>Stock Listing</a></li>
+
+            <li class="menu-heading">
+                Sales & Purchase
+            </li>
+
+            <li><a href="sales-report.html"><i class="bi bi-cart"></i>Sales Report</a></li>
+
+            <li><a href="sales.html"><i class="bi bi-cart-check"></i>Sales</a></li>
+
+            <li><a href="sales-return.html"><i class="bi bi-arrow-return-left"></i>Sales Return</a></li>
+
+            <li><a href="purchase-report.html"><i class="bi bi-bag"></i>Purchase Report</a></li>
+
+            <li><a href="purchase.html"><i class="bi bi-bag-check"></i>Purchase</a></li>
+
+            <li><a href="purchase-return.html"><i class="bi bi-arrow-return-left"></i>Purchase Return</a></li>
+
+            <li class="menu-heading">
+                Profit & Loss Management
+            </li>
+
+            <li><a href="open-balance-sheet.html"><i class="bi bi-graph-up"></i>Open Balance Sheet</a></li>
+
+            <li><a href="pnl-report.html"><i class="bi bi-bar-chart"></i>PnL Report</a></li>
+
+            <li class="menu-heading">
+                Expenses Management
+            </li>
+
+            <li><a href="manage-expense.html"><i class="bi bi-wallet2"></i>Manage Expense</a></li>
+
+            <li class="menu-heading">
+                Role Management
+            </li>
+
+            <li><a href="manage-roles.html"><i class="bi bi-person-gear"></i>Manage Roles</a></li>
+
+        </ul>
+
+        <!-- Bottom Buttons -->
+
+        <div class="sidebar-footer">
+            <a href="account-setting.html" class="account-btn">
+
+                <i class="bi bi-gear"></i>
+
+                Account Setting
+
+            </a>
+
+            <button class="logout-btn">
+
+                <i class="bi bi-box-arrow-right"></i>
+
+                Logout
+
+            </button>
+
+        </div>
+
+    </aside>
+
+    <div class="main-area">
+        <header class="top-navbar">
+            <div class="navbar-left">
+                <button id="sidebarToggle" class="toggle-btn" type="button" aria-label="Toggle Sidebar">
+                    <i class="bi bi-list"></i>
+                </button>
+
+                <div class="search-box">
+                    <i class="bi bi-search"></i>
+                    <input type="text" placeholder="Search">
+                </div>
+            </div>
+
+            <div class="navbar-right">
+                <button class="bell-btn">
+                    <i class="bi bi-bell"></i>
+                </button>
+                <img src="img/profile.png" class="profile-img" alt="">
+            </div>
+        </header>
+
+
+
+
+ <!-- Main Content Section -->       
+        <main class="main-content">
+            <!-- Main content removed per request -->
+            <section class="content-area">
+                <div class="d-flex justify-content-between align-items-center pform-top-nav">
+        <span class="fw-semibold text-secondary" style="font-size: 16px; color: #1e293b !important;">Listing Product</span>
+        <span class="text-muted" style="font-size: 13px;">Dashboard - Inventory Management</span>
+    </div>
+
+    <!-- Main Content Card -->
+    <div class="pform-main-wrap">
+        <!-- Header -->
+        <div class="pform-head-box">
+            <h2 class="pform-title-text">Product Information</h2>
+        </div>
+
+        <!-- Form Fields Body -->
+        <div class="pform-body-content">
+            <form>
+                <div class="row mb-3">
+                    <div class="col-12">
+                        <label class="pform-field-label">Select Category</label>
+                        <select class="form-select pform-input-field text-muted" data-testid="select-category-input">
+                            <option selected>--Select Category--</option>
+                            <option value="1">Display Panels</option>
+                            <option value="2">IC / Board Components</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-12">
+                        <label class="pform-field-label">Select Brand</label>
+                        <select class="form-select pform-input-field text-muted" data-testid="select-brand-input">
+                            <option selected>--Select Brand--</option>
+                            <option value="1">Samsung</option>
+                            <option value="2">Apple</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-12">
+                        <label class="pform-field-label">Select Model</label>
+                        <select class="form-select pform-input-field text-muted" data-testid="select-model-input">
+                            <option selected>--Select Model--</option>
+                            <option value="1">S24</option>
+                            <option value="2">S25</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-12">
+                        <label class="pform-field-label">Company</label>
+                        <input type="text" class="form-control pform-input-field" value="Company" data-testid="company-input">
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-12">
+                        <label class="pform-field-label">Product Name</label>
+                        <input type="text" class="form-control pform-input-field" value="Samsung S24 ultra Smart Phone" data-testid="product-name-input">
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-6 mb-3 mb-md-0">
+                        <label class="pform-field-label">Color</label>
+                        <select class="form-select pform-input-field text-muted" data-testid="color-input">
+                            <option selected>--Select Model--</option>
+                            <option value="1">Black</option>
+                            <option value="2">Silver</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="pform-field-label">Low stock Altet</label>
+                        <input type="number" class="form-control pform-input-field" value="5" data-testid="low-stock-input">
+                    </div>
+                </div>
+
+                <div class="row mb-0">
+                    <div class="col-12">
+                        <label class="pform-field-label">Description</label>
+                        <textarea class="form-control pform-textarea-field" data-testid="description-input">Description</textarea>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- Footer Actions -->
+        <div class="pform-foot-actions">
+            <button type="button" class="pform-btn-cancel" data-testid="cancel-btn">Cancel</button>
+            <button type="button" class="pform-btn-submit" data-testid="add-new-product-submit-btn">Add New Product</button>
+        </div>
+    </div>
+            </section>
+        </main>
+    </div>
+
+</div>
+
+<!-- Bootstrap Js -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="js/script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Stock Listing Panels</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body class="dashboard-page">
+
+<div class="dashboard-wrapper">
+    <!-- ================= Desktop Sidebar ================= -->
+
+    <aside class="sidebar">
+
+        <!-- Logo -->
+        <div class="sidebar-logo">
+
+            <img src="img/logo.png" alt="Logo">
+
+            <h4>Sohail Mobile</h4>
+
+        </div>
+
+        <!-- Sidebar Menu -->
+
+        <ul class="sidebar-menu">
+
+            <li class="active">
+                <a href="dashboard.html">
+                    <i class="bi bi-house-door"></i>
+                    Dashboard
+                </a>
+            </li>
+
+            <li class="menu-heading">Vendor Management</li>
+
+            <li>
+                <a href="manage-vendor.html">
+                    <i class="bi bi-person"></i>
+                    Manage Vendor
+                </a>
+            </li>
+
+            <li class="menu-heading">
+                Customer Relationship Management
+            </li>
+
+            <li>
+                <a href="manage-customer.html">
+                    <i class="bi bi-person"></i>
+                    Manage Customer
+                </a>
+            </li>
+
+            <li class="menu-heading">
+                Inventory Management
+            </li>
+
+            <li><a href="category-listing.html"><i class="bi bi-box"></i>Category Listing</a></li>
+
+            <li><a href="brand-model.html"><i class="bi bi-phone"></i>Brand & Model</a></li>
+
+            <li><a href="listing-product.html"><i class="bi bi-list"></i>Listing Product</a></li>
+
+            <li><a href="stock-listing.html"><i class="bi bi-archive"></i>Stock Listing</a></li>
+
+            <li class="menu-heading">
+                Sales & Purchase
+            </li>
+
+            <li><a href="sales-report.html"><i class="bi bi-cart"></i>Sales Report</a></li>
+
+            <li><a href="sales.html"><i class="bi bi-cart-check"></i>Sales</a></li>
+
+            <li><a href="sales-return.html"><i class="bi bi-arrow-return-left"></i>Sales Return</a></li>
+
+            <li><a href="purchase-report.html"><i class="bi bi-bag"></i>Purchase Report</a></li>
+
+            <li><a href="purchase.html"><i class="bi bi-bag-check"></i>Purchase</a></li>
+
+            <li><a href="purchase-return.html"><i class="bi bi-arrow-return-left"></i>Purchase Return</a></li>
+
+            <li class="menu-heading">
+                Profit & Loss Management
+            </li>
+
+            <li><a href="open-balance-sheet.html"><i class="bi bi-graph-up"></i>Open Balance Sheet</a></li>
+
+            <li><a href="pnl-report.html"><i class="bi bi-bar-chart"></i>PnL Report</a></li>
+
+            <li class="menu-heading">
+                Expenses Management
+            </li>
+
+            <li><a href="manage-expense.html"><i class="bi bi-wallet2"></i>Manage Expense</a></li>
+
+            <li class="menu-heading">
+                Role Management
+            </li>
+
+            <li><a href="manage-roles.html"><i class="bi bi-person-gear"></i>Manage Roles</a></li>
+
+        </ul>
+
+        <!-- Bottom Buttons -->
+
+        <div class="sidebar-footer">
+            <a href="account-setting.html" class="account-btn">
+
+                <i class="bi bi-gear"></i>
+
+                Account Setting
+
+            </a>
+
+            <button class="logout-btn">
+
+                <i class="bi bi-box-arrow-right"></i>
+
+                Logout
+
+            </button>
+
+        </div>
+
+    </aside>
+
+    <div class="main-area">
+        <header class="top-navbar">
+            <div class="navbar-left">
+                <button id="sidebarToggle" class="toggle-btn" type="button" aria-label="Toggle Sidebar">
+                    <i class="bi bi-list"></i>
+                </button>
+
+                <div class="search-box">
+                    <i class="bi bi-search"></i>
+                    <input type="text" placeholder="Search">
+                </div>
+            </div>
+
+            <div class="navbar-right">
+                <button class="bell-btn">
+                    <i class="bi bi-bell"></i>
+                </button>
+                <img src="img/profile.png" class="profile-img" alt="">
+            </div>
+        </header>
+
+
+
+
+ <!-- Main Content Section -->       
+        <main class="main-content">
+            <!-- Main content removed per request -->
+            <section class="content-area">
+                <div class="d-flex justify-content-between align-items-center sdet-top-nav">
+        <span class="fw-semibold text-secondary" style="font-size: 16px; color: #1e293b !important;">Stock Listing</span>
+        <span class="text-muted" style="font-size: 13px;">Dashboard - Inventory Management</span>
+    </div>
+
+    <!-- Main Content Card -->
+    <div class="sdet-main-wrap">
+        <!-- Header -->
+        <div class="sdet-head-row">
+            <h2 class="sdet-title-main">All Stock</h2>
+        </div>
+
+        <!-- Toolbar -->
+        <div class="sdet-toolbar-area">
+            <div class="d-flex align-items-center text-secondary" style="font-size: 14px;">
+                <span>Show</span>
+                <select class="form-select form-select-sm sdet-select-entries" data-testid="entries-select">
+                    <option value="10" selected>10</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                </select>
+                <span>entries per page</span>
+            </div>
+            <div class="d-flex align-items-center gap-2">
+                <span style="font-size: 14px; color: #475569;">Search:</span>
+                <div class="sdet-search-wrap">
+                    <input type="text" class="form-control form-control-sm sdet-search-field" placeholder="Search Product" data-testid="search-input">
+                </div>
+            </div>
+        </div>
+
+        <!-- Table -->
+        <div class="table-responsive">
+            <table class="table sdet-data-table align-middle">
+                <thead>
+                    <tr>
+                        <th>Brand</th>
+                        <th>Model</th>
+                        <th>Quantity</th>
+                        <th>Price Range</th>
+                        <th>Detail</th>
+                    </tr>
+                </thead>
+                <tbody data-testid="stock-listing-table-body" id="stockTableBody">
+                    <!-- Row 1 -->
+                    <tr class="sdet-clickable-row" onclick="toggleBreakdown(1)" data-testid="stock-row-1">
+                        <td class="fw-medium text-dark">Samsung</td>
+                        <td>S24</td>
+                        <td>185</td>
+                        <td>PKR 1,500 - 2,500</td>
+                        <td class="text-secondary">2 Vendor</td>
+                    </tr>
+                    <tr id="breakdown-row-1" class="d-none">
+                        <td colspan="5" class="p-0">
+                            <div class="vbreak-container">
+                                <div class="vbreak-title">Multi-Vendor Inventory Breakdown</div>
+                                <table class="table vbreak-table align-middle">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 60px;">SL</th>
+                                            <th>Vendor Name</th>
+                                            <th>Company</th>
+                                            <th>Product</th>
+                                            <th>Color</th>
+                                            <th>Quantity</th>
+                                            <th>Unit Price</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td class="fw-medium text-dark">Apex Mobile Co.</td>
+                                            <td>Apex Mobile .inc</td>
+                                            <td>Samsung S24...</td>
+                                            <td>S24</td>
+                                            <td>100</td>
+                                            <td>PKR 1,500</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td class="fw-medium text-dark">Global Tech Co.</td>
+                                            <td>Apex Mobile .inc</td>
+                                            <td>Samsung S24...</td>
+                                            <td>S25 Ultra</td>
+                                            <td>85</td>
+                                            <td>PKR 2,500</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Row 2 -->
+                    <tr class="sdet-clickable-row" onclick="toggleBreakdown(2)" data-testid="stock-row-2">
+                        <td class="fw-medium text-dark">Samsung</td>
+                        <td>S24</td>
+                        <td>185</td>
+                        <td>PKR 1,500 - 2,500</td>
+                        <td class="text-secondary">2 Vendor</td>
+                    </tr>
+                    <tr id="breakdown-row-2" class="d-none">
+                        <td colspan="5" class="p-0">
+                            <div class="vbreak-container">
+                                <div class="vbreak-title">Multi-Vendor Inventory Breakdown</div>
+                                <table class="table vbreak-table align-middle">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 60px;">SL</th>
+                                            <th>Vendor Name</th>
+                                            <th>Company</th>
+                                            <th>Product</th>
+                                            <th>Color</th>
+                                            <th>Quantity</th>
+                                            <th>Unit Price</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td class="fw-medium text-dark">Local Vendor A</td>
+                                            <td>Apex Mobile .inc</td>
+                                            <td>Samsung S24...</td>
+                                            <td>Black</td>
+                                            <td>90</td>
+                                            <td>PKR 1,500</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td class="fw-medium text-dark">Local Vendor B</td>
+                                            <td>Apex Mobile .inc</td>
+                                            <td>Samsung S24...</td>
+                                            <td>Blue</td>
+                                            <td>95</td>
+                                            <td>PKR 2,500</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Row 3 -->
+                    <tr class="sdet-clickable-row" onclick="toggleBreakdown(3)">
+                        <td class="fw-medium text-dark">Samsung</td>
+                        <td>S24</td>
+                        <td>185</td>
+                        <td>PKR 1,500 - 2,500</td>
+                        <td class="text-secondary">2 Vendor</td>
+                    </tr>
+                    <tr id="breakdown-row-3" class="d-none">
+                        <td colspan="5" class="p-0">
+                            <div class="vbreak-container">
+                                <div class="vbreak-title">Multi-Vendor Inventory Breakdown</div>
+                                <table class="table vbreak-table align-middle">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 60px;">SL</th>
+                                            <th>Vendor Name</th>
+                                            <th>Company</th>
+                                            <th>Product</th>
+                                            <th>Color</th>
+                                            <th>Quantity</th>
+                                            <th>Unit Price</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td class="fw-medium text-dark">Vendor X</td>
+                                            <td>Apex Mobile .inc</td>
+                                            <td>Samsung S24...</td>
+                                            <td>Silver</td>
+                                            <td>100</td>
+                                            <td>PKR 1,600</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Row 4 -->
+                    <tr class="sdet-clickable-row" onclick="toggleBreakdown(4)">
+                        <td class="fw-medium text-dark">Samsung</td>
+                        <td>S24</td>
+                        <td>185</td>
+                        <td>PKR 1,500 - 2,500</td>
+                        <td class="text-secondary">2 Vendor</td>
+                    </tr>
+                    <tr id="breakdown-row-4" class="d-none">
+                        <td colspan="5" class="p-0">
+                            <div class="vbreak-container">
+                                <div class="vbreak-title">Multi-Vendor Inventory Breakdown</div>
+                                <table class="table vbreak-table align-middle">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 60px;">SL</th>
+                                            <th>Vendor Name</th>
+                                            <th>Company</th>
+                                            <th>Product</th>
+                                            <th>Color</th>
+                                            <th>Quantity</th>
+                                            <th>Unit Price</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td class="fw-medium text-dark">Vendor Y</td>
+                                            <td>Apex Mobile .inc</td>
+                                            <td>Samsung S24...</td>
+                                            <td>Gold</td>
+                                            <td>185</td>
+                                            <td>PKR 2,000</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Footer Pagination -->
+        <div class="sdet-foot-area">
+            <div>Showing 1 to 4 of 20 entries</div>
+            <nav aria-label="Page navigation">
+                <ul class="pagination sdet-pagination mb-0">
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" aria-label="Previous">&laquo;</a>
+                    </li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">&rsaquo;</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Last">&raquo;</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+            </section>
+        </main>
+    </div>
+
+</div>
+
+<!-- Bootstrap Js -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="js/script.js"></script>
+
+</body>
+
+</html>

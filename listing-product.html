@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Listing Product</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body class="dashboard-page">
+
+<div class="dashboard-wrapper">
+    <!-- ================= Desktop Sidebar ================= -->
+
+    <aside class="sidebar">
+
+        <!-- Logo -->
+        <div class="sidebar-logo">
+
+            <img src="img/logo.png" alt="Logo">
+
+            <h4>Sohail Mobile</h4>
+
+        </div>
+
+        <!-- Sidebar Menu -->
+
+        <ul class="sidebar-menu">
+
+            <li class="active">
+                <a href="dashboard.html">
+                    <i class="bi bi-house-door"></i>
+                    Dashboard
+                </a>
+            </li>
+
+            <li class="menu-heading">Vendor Management</li>
+
+            <li>
+                <a href="manage-vendor.html">
+                    <i class="bi bi-person"></i>
+                    Manage Vendor
+                </a>
+            </li>
+
+            <li class="menu-heading">
+                Customer Relationship Management
+            </li>
+
+            <li>
+                <a href="manage-customer.html">
+                    <i class="bi bi-person"></i>
+                    Manage Customer
+                </a>
+            </li>
+
+            <li class="menu-heading">
+                Inventory Management
+            </li>
+
+            <li><a href="category-listing.html"><i class="bi bi-box"></i>Category Listing</a></li>
+
+            <li><a href="brand-model.html"><i class="bi bi-phone"></i>Brand & Model</a></li>
+
+            <li><a href="listing-product.html"><i class="bi bi-list"></i>Listing Product</a></li>
+
+            <li><a href="stock-listing.html"><i class="bi bi-archive"></i>Stock Listing</a></li>
+
+            <li class="menu-heading">
+                Sales & Purchase
+            </li>
+
+            <li><a href="sales-report.html"><i class="bi bi-cart"></i>Sales Report</a></li>
+
+            <li><a href="sales.html"><i class="bi bi-cart-check"></i>Sales</a></li>
+
+            <li><a href="sales-return.html"><i class="bi bi-arrow-return-left"></i>Sales Return</a></li>
+
+            <li><a href="purchase-report.html"><i class="bi bi-bag"></i>Purchase Report</a></li>
+
+            <li><a href="purchase.html"><i class="bi bi-bag-check"></i>Purchase</a></li>
+
+            <li><a href="purchase-return.html"><i class="bi bi-arrow-return-left"></i>Purchase Return</a></li>
+
+            <li class="menu-heading">
+                Profit & Loss Management
+            </li>
+
+            <li><a href="open-balance-sheet.html"><i class="bi bi-graph-up"></i>Open Balance Sheet</a></li>
+
+            <li><a href="pnl-report.html"><i class="bi bi-bar-chart"></i>PnL Report</a></li>
+
+            <li class="menu-heading">
+                Expenses Management
+            </li>
+
+            <li><a href="manage-expense.html"><i class="bi bi-wallet2"></i>Manage Expense</a></li>
+
+            <li class="menu-heading">
+                Role Management
+            </li>
+
+            <li><a href="manage-roles.html"><i class="bi bi-person-gear"></i>Manage Roles</a></li>
+
+        </ul>
+
+        <!-- Bottom Buttons -->
+
+        <div class="sidebar-footer">
+            <a href="account-setting.html" class="account-btn">
+
+                <i class="bi bi-gear"></i>
+
+                Account Setting
+
+            </a>
+
+            <button class="logout-btn">
+
+                <i class="bi bi-box-arrow-right"></i>
+
+                Logout
+
+            </button>
+
+        </div>
+
+    </aside>
+
+    <div class="main-area">
+        <header class="top-navbar">
+            <div class="navbar-left">
+                <button id="sidebarToggle" class="toggle-btn" type="button" aria-label="Toggle Sidebar">
+                    <i class="bi bi-list"></i>
+                </button>
+
+                <div class="search-box">
+                    <i class="bi bi-search"></i>
+                    <input type="text" placeholder="Search">
+                </div>
+            </div>
+
+            <div class="navbar-right">
+                <button class="bell-btn">
+                    <i class="bi bi-bell"></i>
+                </button>
+                <img src="img/profile.png" class="profile-img" alt="">
+            </div>
+        </header>
+
+
+
+
+ <!-- Main Content Section -->       
+        <main class="main-content">
+            <!-- Main content removed per request -->
+            <section class="content-area">
+                 <div class="d-flex justify-content-between align-items-center plist-top-nav">
+        <span class="fw-semibold text-secondary" style="font-size: 16px; color: #1e293b !important;">Listing Product</span>
+        <span class="text-muted" style="font-size: 13px;">Dashboard - Inventory Management</span>
+    </div>
+
+    <!-- Main Content Card -->
+    <div class="plist-main-wrap">
+        <!-- Header -->
+        <div class="plist-head-row">
+            <h2 class="plist-title-main">All Products</h2>
+            <button class="plist-btn-primary" data-testid="add-new-product-btn"
+            onclick="location.href='add-new-product.html'">
+                <i class="bi bi-plus-lg"></i> Add New Product
+            </button>
+        </div>
+
+        <!-- Toolbar -->
+        <div class="plist-toolbar-area">
+            <div class="d-flex align-items-center text-secondary" style="font-size: 14px;">
+                <span>Show</span>
+                <select class="form-select form-select-sm plist-select-entries" data-testid="entries-select">
+                    <option value="10" selected>10</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                </select>
+                <span>entries per page</span>
+            </div>
+            <div class="search-box-inline">
+                        <label for="searchVendor">Search:</label>
+                        <input id="searchVendor" type="text" placeholder="Search Category">
+                        <button class="btn btn-primary" id="calendarBtn">
+    <i class="bi bi-calendar-event"></i>
+</button>
+    <div class="modal fade" id="dateFilterModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content date-filter-modal">
+
+            <div class="modal-header">
+                <h5 class="modal-title">Select Date</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+
+                <div class="row">
+                    <div class="col-6">
+                        <label>From Date</label>
+                        <input type="date" class="form-control">
+                    </div>
+
+                    <div class="col-6">
+                        <label>To Date</label>
+                        <input type="date" class="form-control">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+
+                <button type="button" class="btn btn-reset" data-bs-dismiss="modal">
+                    Reset
+                </button>
+
+                <button type="button" class="btn btn-filter">
+                    Apply Filter
+                </button>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+                    </div>
+        </div>
+
+        <!-- Table -->
+        <div class="table-responsive">
+            <table class="table plist-data-table align-middle">
+                <thead>
+                    <tr>
+                        <th style="width: 60px;">SL</th>
+                        <th>Category</th>
+                        <th>Brand</th>
+                        <th>Model</th>
+                        <th>Company</th>
+                        <th>Product Name</th>
+                        <th>Color</th>
+                        <th style="width: 120px;">Actions</th>
+                    </tr>
+                </thead>
+                <tbody data-testid="products-listing-table-body">
+                    <tr>
+                        <td>1</td>
+                        <td>Display Panels</td>
+                        <td>Samsung</td>
+                        <td>6S Plus</td>
+                        <td>Apex Mobile.inc</td>
+                        <td class="fw-medium text-dark">LCD Panel</td>
+                        <td>
+                            <span class="plist-color-badge">Green</span>
+                            <span class="plist-color-badge">Blue</span>
+                        </td>
+                        <td>
+                            <div class="plist-action-group">
+                                <button class="plist-act-btn plist-btn-view" title="View"><i class="bi bi-eye"></i></button>
+                                <button class="plist-act-btn plist-btn-edit" title="Edit"><i class="bi bi-pencil-square"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>IC / Board Components</td>
+                        <td>Apple</td>
+                        <td>XS Max</td>
+                        <td>Apex Mobile.inc</td>
+                        <td class="fw-medium text-dark">IC Panel</td>
+                        <td>
+                            <span class="plist-color-badge">Green</span>
+                            <span class="plist-color-badge">Red</span>
+                        </td>
+                        <td>
+                            <div class="plist-action-group">
+                                <button class="plist-act-btn plist-btn-view" title="View"><i class="bi bi-eye"></i></button>
+                                <button class="plist-act-btn plist-btn-edit" title="Edit"><i class="bi bi-pencil-square"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Display Panels</td>
+                        <td>LG</td>
+                        <td>J7</td>
+                        <td>Apex Mobile.inc</td>
+                        <td class="fw-medium text-dark">OLED Panel</td>
+                        <td>
+                            <span class="plist-color-badge">Silver</span>
+                            <span class="plist-color-badge">Blue</span>
+                        </td>
+                        <td>
+                            <div class="plist-action-group">
+                                <button class="plist-act-btn plist-btn-view" title="View"><i class="bi bi-eye"></i></button>
+                                <button class="plist-act-btn plist-btn-edit" title="Edit"><i class="bi bi-pencil-square"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Charging Components</td>
+                        <td>Huawei</td>
+                        <td>A05</td>
+                        <td>Apex Mobile.inc</td>
+                        <td class="fw-medium text-dark">Charging Strip</td>
+                        <td>
+                            <span class="plist-color-badge">Red</span>
+                            <span class="plist-color-badge">Blue</span>
+                        </td>
+                        <td>
+                            <div class="plist-action-group">
+                                <button class="plist-act-btn plist-btn-view" title="View"><i class="bi bi-eye"></i></button>
+                                <button class="plist-act-btn plist-btn-edit" title="Edit"><i class="bi bi-pencil-square"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Audio Components</td>
+                        <td>Sunny</td>
+                        <td>XR</td>
+                        <td>Apex Mobile.inc</td>
+                        <td class="fw-medium text-dark">Ringer Box</td>
+                        <td>
+                            <span class="plist-color-badge">Green</span>
+                            <span class="plist-color-badge">Blue</span>
+                        </td>
+                        <td>
+                            <div class="plist-action-group">
+                                <button class="plist-act-btn plist-btn-view" title="View"><i class="bi bi-eye"></i></button>
+                                <button class="plist-act-btn plist-btn-edit" title="Edit"><i class="bi bi-pencil-square"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Touch & Glass</td>
+                        <td>Corning</td>
+                        <td>OCA R8</td>
+                        <td>Apex Mobile.inc</td>
+                        <td class="fw-medium text-dark">OCA Glass</td>
+                        <td>
+                            <span class="plist-color-badge">Red</span>
+                            <span class="plist-color-badge">Blue</span>
+                        </td>
+                        <td>
+                            <div class="plist-action-group">
+                                <button class="plist-act-btn plist-btn-view" title="View"><i class="bi bi-eye"></i></button>
+                                <button class="plist-act-btn plist-btn-edit" title="Edit"><i class="bi bi-pencil-square"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Buttons & Flex Cables</td>
+                        <td>Foxconn</td>
+                        <td>B1</td>
+                        <td>Apex Mobile.inc</td>
+                        <td class="fw-medium text-dark">On Off (Power)</td>
+                        <td>
+                            <span class="plist-color-badge">Silver</span>
+                            <span class="plist-color-badge">Blue</span>
+                        </td>
+                        <td>
+                            <div class="plist-action-group">
+                                <button class="plist-act-btn plist-btn-view" title="View"><i class="bi bi-eye"></i></button>
+                                <button class="plist-act-btn plist-btn-edit" title="Edit"><i class="bi bi-pencil-square"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Mobile Phone</td>
+                        <td>Itel</td>
+                        <td>Y9 Prime</td>
+                        <td>Apex Mobile.inc</td>
+                        <td class="fw-medium text-dark">Huawei</td>
+                        <td>
+                            <span class="plist-color-badge">Green</span>
+                            <span class="plist-color-badge">Red</span>
+                        </td>
+                        <td>
+                            <div class="plist-action-group">
+                                <button class="plist-act-btn plist-btn-view" title="View"><i class="bi bi-eye"></i></button>
+                                <button class="plist-act-btn plist-btn-edit" title="Edit"><i class="bi bi-pencil-square"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Mobile Phones</td>
+                        <td>Techno</td>
+                        <td>13 Pro</td>
+                        <td>Apex Mobile.inc</td>
+                        <td class="fw-medium text-dark">iPhone</td>
+                        <td>
+                            <span class="plist-color-badge">Silver</span>
+                            <span class="plist-color-badge">Blue</span>
+                        </td>
+                        <td>
+                            <div class="plist-action-group">
+                                <button class="plist-act-btn plist-btn-view" title="View"><i class="bi bi-eye"></i></button>
+                                <button class="plist-act-btn plist-btn-edit" title="Edit"><i class="bi bi-pencil-square"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>Mobile Phones</td>
+                        <td>Vivo</td>
+                        <td>Reno 6</td>
+                        <td>Apex Mobile.inc</td>
+                        <td class="fw-medium text-dark">Oppo</td>
+                        <td>
+                            <span class="plist-color-badge">Red</span>
+                            <span class="plist-color-badge">Blue</span>
+                        </td>
+                        <td>
+                            <div class="plist-action-group">
+                                <button class="plist-act-btn plist-btn-view" title="View"><i class="bi bi-eye"></i></button>
+                                <button class="plist-act-btn plist-btn-edit" title="Edit"><i class="bi bi-pencil-square"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Footer Pagination -->
+        <div class="plist-foot-area">
+            <div>Showing 1 to 10 of 20 entries</div>
+            <nav aria-label="Page navigation">
+                <ul class="pagination plist-pagination mb-0">
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" aria-label="Previous">&laquo;</a>
+                    </li>
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" aria-label="First">&lsaquo;</a>
+                    </li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">&rsaquo;</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Last">&raquo;</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+            </section>
+        </main>
+    </div>
+
+</div>
+
+<!-- Bootstrap Js -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="js/script.js"></script>
+
+</body>
+
+</html>

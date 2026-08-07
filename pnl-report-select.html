@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PnL Report - For Selected Duration</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body class="dashboard-page">
+
+<div class="dashboard-wrapper">
+    <!-- ================= Desktop Sidebar ================= -->
+
+    <aside class="sidebar">
+
+        <!-- Logo -->
+        <div class="sidebar-logo">
+
+            <img src="img/logo.png" alt="Logo">
+
+            <h4>Sohail Mobile</h4>
+
+        </div>
+
+        <!-- Sidebar Menu -->
+
+        <ul class="sidebar-menu">
+
+            <li class="active">
+                <a href="dashboard.html">
+                    <i class="bi bi-house-door"></i>
+                    Dashboard
+                </a>
+            </li>
+
+            <li class="menu-heading">Vendor Management</li>
+
+            <li>
+                <a href="manage-vendor.html">
+                    <i class="bi bi-person"></i>
+                    Manage Vendor
+                </a>
+            </li>
+
+            <li class="menu-heading">
+                Customer Relationship Management
+            </li>
+
+            <li>
+                <a href="manage-customer.html">
+                    <i class="bi bi-person"></i>
+                    Manage Customer
+                </a>
+            </li>
+
+            <li class="menu-heading">
+                Inventory Management
+            </li>
+
+            <li><a href="category-listing.html"><i class="bi bi-box"></i>Category Listing</a></li>
+
+            <li><a href="brand-model.html"><i class="bi bi-phone"></i>Brand & Model</a></li>
+
+            <li><a href="listing-product.html"><i class="bi bi-list"></i>Listing Product</a></li>
+
+            <li><a href="stock-listing.html"><i class="bi bi-archive"></i>Stock Listing</a></li>
+
+            <li class="menu-heading">
+                Sales & Purchase
+            </li>
+
+            <li><a href="sales-report.html"><i class="bi bi-cart"></i>Sales Report</a></li>
+
+            <li><a href="sales.html"><i class="bi bi-cart-check"></i>Sales</a></li>
+
+            <li><a href="sales-return.html"><i class="bi bi-arrow-return-left"></i>Sales Return</a></li>
+
+            <li><a href="purchase-report.html"><i class="bi bi-bag"></i>Purchase Report</a></li>
+
+            <li><a href="purchase.html"><i class="bi bi-bag-check"></i>Purchase</a></li>
+
+            <li><a href="purchase-return.html"><i class="bi bi-arrow-return-left"></i>Purchase Return</a></li>
+
+            <li class="menu-heading">
+                Profit & Loss Management
+            </li>
+
+            <li><a href="open-balance-sheet.html"><i class="bi bi-graph-up"></i>Open Balance Sheet</a></li>
+
+            <li><a href="pnl-report.html"><i class="bi bi-bar-chart"></i>PnL Report</a></li>
+
+            <li class="menu-heading">
+                Expenses Management
+            </li>
+
+            <li><a href="manage-expense.html"><i class="bi bi-wallet2"></i>Manage Expense</a></li>
+
+            <li class="menu-heading">
+                Role Management
+            </li>
+
+            <li><a href="manage-roles.html"><i class="bi bi-person-gear"></i>Manage Roles</a></li>
+
+        </ul>
+
+        <!-- Bottom Buttons -->
+
+        <div class="sidebar-footer">
+            <a href="account-setting.html" class="account-btn">
+
+                <i class="bi bi-gear"></i>
+
+                Account Setting
+
+            </a>
+
+            <button class="logout-btn">
+
+                <i class="bi bi-box-arrow-right"></i>
+
+                Logout
+
+            </button>
+
+        </div>
+
+    </aside>
+
+    <div class="main-area">
+        <header class="top-navbar">
+            <div class="navbar-left">
+                <button id="sidebarToggle" class="toggle-btn" type="button" aria-label="Toggle Sidebar">
+                    <i class="bi bi-list"></i>
+                </button>
+
+                <div class="search-box">
+                    <i class="bi bi-search"></i>
+                    <input type="text" placeholder="Search">
+                </div>
+            </div>
+
+            <div class="navbar-right">
+                <button class="bell-btn">
+                    <i class="bi bi-bell"></i>
+                </button>
+                <img src="img/profile.png" class="profile-img" alt="">
+            </div>
+        </header>
+
+
+
+
+ <!-- Main Content Section -->       
+        <main class="main-content">
+            <!-- Main content removed per request -->
+            <section class="content-area">
+                 <!-- Main Content Wrapper to be placed inside your dashboard container -->
+    <div class="pnl-select-wrapper">
+        
+        <!-- Header -->
+        <div class="pnl-select-header-main">
+            <h4>PnL Report</h4>
+            <span>Dashboard - Profit & Loss Management</span>
+        </div>
+
+        <!-- Search PnL Report Card -->
+        <div class="pnl-select-box">
+            <div class="pnl-select-section-title">Search PnL Report</div>
+            <div class="row align-items-end g-3">
+                <div class="col-md-5">
+                    <label class="pnl-select-field-label">From Date <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control pnl-select-text-input" value="01/01/2026" readonly>
+                </div>
+                <div class="col-md-5">
+                    <label class="pnl-select-field-label">End Date <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control pnl-select-text-input" value="31/01/2026" readonly>
+                </div>
+                <div class="col-md-2 d-flex">
+                    <button class="btn pnl-select-btn-action w-100">Search Report</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Metrics Cards Row -->
+        <div class="row g-3 mb-4">
+            <!-- Total Sale -->
+            <div class="col-md-3">
+                <div class="pnl-select-metric-card pnl-select-metric-blue">
+                    <div class="pnl-select-metric-label">Total Sale</div>
+                    <div class="pnl-select-metric-val">$40,000</div>
+                    <div class="pnl-select-metric-icon">
+                        <i class="bi bi-cart3"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- Total Purchase -->
+            <div class="col-md-3">
+                <div class="pnl-select-metric-card pnl-select-metric-purple">
+                    <div class="pnl-select-metric-label">Total Purchase</div>
+                    <div class="pnl-select-metric-val">$40,000</div>
+                    <div class="pnl-select-metric-icon">
+                        <i class="bi bi-cart-dash"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- Total Expense -->
+            <div class="col-md-3">
+                <div class="pnl-select-metric-card pnl-select-metric-orange">
+                    <div class="pnl-select-metric-label">Total Expense</div>
+                    <div class="pnl-select-metric-val">$40,000</div>
+                    <div class="pnl-select-metric-icon">
+                        <i class="bi bi-wallet2"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- PnL -->
+            <div class="col-md-3">
+                <div class="pnl-select-metric-card pnl-select-metric-green">
+                    <div class="pnl-select-metric-label">PnL</div>
+                    <div class="pnl-select-metric-val">$40,000</div>
+                    <div class="pnl-select-metric-icon">
+                        <i class="bi bi-graph-up-arrow"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sales / Purchases / Expenses Table Card -->
+        <div class="pnl-select-box">
+            <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-3">
+                <div class="pnl-select-section-title mb-0">Sales / Purchases / Expenses</div>
+                <button class="btn pnl-select-btn-action"><i class="bi bi-download me-1"></i> Download Report</button>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table pnl-select-data-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Sales</th>
+                            <th>Purchases</th>
+                            <th>Expenses</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Dec 01, 2025</td>
+                            <td>PKR 3,400,000</td>
+                            <td>PKR 2,800,000</td>
+                            <td>PKR 600,000</td>
+                        </tr>
+                        <tr>
+                            <td>Dec 02, 2025</td>
+                            <td>PKR 4,200,000</td>
+                            <td>PKR 3,500,000</td>
+                            <td>PKR 700,000</td>
+                        </tr>
+                        <tr>
+                            <td>Dec 03, 2025</td>
+                            <td>PKR 5,100,000</td>
+                            <td>PKR 4,300,000</td>
+                            <td>PKR 800,000</td>
+                        </tr>
+                        <tr>
+                            <td>Dec 04, 2025</td>
+                            <td>PKR 6,000,000</td>
+                            <td>PKR 5,000,000</td>
+                            <td>PKR 1,000,000</td>
+                        </tr>
+                        <tr>
+                            <td>Dec 05, 2025</td>
+                            <td>PKR 6,800,000</td>
+                            <td>PKR 5,700,000</td>
+                            <td>PKR 1,100,000</td>
+                        </tr>
+                        <tr>
+                            <td>Dec 06, 2025</td>
+                            <td>PKR 7,500,000</td>
+                            <td>PKR 6,300,000</td>
+                            <td>PKR 1,200,000</td>
+                        </tr>
+                        <tr>
+                            <td>Dec 07, 2025</td>
+                            <td>PKR 8,200,000</td>
+                            <td>PKR 6,900,000</td>
+                            <td>PKR 1,300,000</td>
+                        </tr>
+                        <tr>
+                            <td>Dec 08, 2025</td>
+                            <td>PKR 9,000,000</td>
+                            <td>PKR 7,500,000</td>
+                            <td>PKR 1,500,000</td>
+                        </tr>
+                        <tr>
+                            <td>Dec 09, 2025</td>
+                            <td>PKR 9,700,000</td>
+                            <td>PKR 8,100,000</td>
+                            <td>PKR 1,600,000</td>
+                        </tr>
+                        <tr>
+                            <td>Dec 10, 2025</td>
+                            <td>PKR 9,700,000</td>
+                            <td>PKR 8,100,000</td>
+                            <td>PKR 1,600,000</td>
+                        </tr>
+                        <tr>
+                            <td>Dec 11, 2025</td>
+                            <td>PKR 9,700,000</td>
+                            <td>PKR 8,100,000</td>
+                            <td>PKR 1,600,000</td>
+                        </tr>
+                        <tr>
+                            <td>Dec 12, 2025</td>
+                            <td>PKR 9,700,000</td>
+                            <td>PKR 8,100,000</td>
+                            <td>PKR 1,600,000</td>
+                        </tr>
+                        <tr>
+                            <td>Dec 13, 2025</td>
+                            <td>PKR 9,700,000</td>
+                            <td>PKR 8,100,000</td>
+                            <td>PKR 1,600,000</td>
+                        </tr>
+                        <tr>
+                            <td>Dec 14, 2025</td>
+                            <td>PKR 9,700,000</td>
+                            <td>PKR 8,100,000</td>
+                            <td>PKR 1,600,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+            </section>
+        </main>
+    </div>
+
+</div>
+
+<!-- Bootstrap Js -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="js/script.js"></script>
+
+</body>
+
+</html>

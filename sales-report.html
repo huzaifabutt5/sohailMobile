@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sales Report</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body class="dashboard-page">
+
+<div class="dashboard-wrapper">
+    <!-- ================= Desktop Sidebar ================= -->
+
+    <aside class="sidebar">
+
+        <!-- Logo -->
+        <div class="sidebar-logo">
+
+            <img src="img/logo.png" alt="Logo">
+
+            <h4>Sohail Mobile</h4>
+
+        </div>
+
+        <!-- Sidebar Menu -->
+
+        <ul class="sidebar-menu">
+
+            <li class="active">
+                <a href="dashboard.html">
+                    <i class="bi bi-house-door"></i>
+                    Dashboard
+                </a>
+            </li>
+
+            <li class="menu-heading">Vendor Management</li>
+
+            <li>
+                <a href="manage-vendor.html">
+                    <i class="bi bi-person"></i>
+                    Manage Vendor
+                </a>
+            </li>
+
+            <li class="menu-heading">
+                Customer Relationship Management
+            </li>
+
+            <li>
+                <a href="manage-customer.html">
+                    <i class="bi bi-person"></i>
+                    Manage Customer
+                </a>
+            </li>
+
+            <li class="menu-heading">
+                Inventory Management
+            </li>
+
+            <li><a href="category-listing.html"><i class="bi bi-box"></i>Category Listing</a></li>
+
+            <li><a href="brand-model.html"><i class="bi bi-phone"></i>Brand & Model</a></li>
+
+            <li><a href="listing-product.html"><i class="bi bi-list"></i>Listing Product</a></li>
+
+            <li><a href="stock-listing.html"><i class="bi bi-archive"></i>Stock Listing</a></li>
+
+            <li class="menu-heading">
+                Sales & Purchase
+            </li>
+
+            <li><a href="sales-report.html"><i class="bi bi-cart"></i>Sales Report</a></li>
+
+            <li><a href="sales.html"><i class="bi bi-cart-check"></i>Sales</a></li>
+
+            <li><a href="sales-return.html"><i class="bi bi-arrow-return-left"></i>Sales Return</a></li>
+
+            <li><a href="purchase-report.html"><i class="bi bi-bag"></i>Purchase Report</a></li>
+
+            <li><a href="purchase.html"><i class="bi bi-bag-check"></i>Purchase</a></li>
+
+            <li><a href="purchase-return.html"><i class="bi bi-arrow-return-left"></i>Purchase Return</a></li>
+
+            <li class="menu-heading">
+                Profit & Loss Management
+            </li>
+
+            <li><a href="open-balance-sheet.html"><i class="bi bi-graph-up"></i>Open Balance Sheet</a></li>
+
+            <li><a href="pnl-report.html"><i class="bi bi-bar-chart"></i>PnL Report</a></li>
+
+            <li class="menu-heading">
+                Expenses Management
+            </li>
+
+            <li><a href="manage-expense.html"><i class="bi bi-wallet2"></i>Manage Expense</a></li>
+
+            <li class="menu-heading">
+                Role Management
+            </li>
+
+            <li><a href="manage-roles.html"><i class="bi bi-person-gear"></i>Manage Roles</a></li>
+
+        </ul>
+
+        <!-- Bottom Buttons -->
+
+        <div class="sidebar-footer">
+            <a href="account-setting.html" class="account-btn">
+
+                <i class="bi bi-gear"></i>
+
+                Account Setting
+
+            </a>
+
+            <button class="logout-btn">
+
+                <i class="bi bi-box-arrow-right"></i>
+
+                Logout
+
+            </button>
+
+        </div>
+
+    </aside>
+
+    <div class="main-area">
+        <header class="top-navbar">
+            <div class="navbar-left">
+                <button id="sidebarToggle" class="toggle-btn" type="button" aria-label="Toggle Sidebar">
+                    <i class="bi bi-list"></i>
+                </button>
+
+                <div class="search-box">
+                    <i class="bi bi-search"></i>
+                    <input type="text" placeholder="Search">
+                </div>
+            </div>
+
+            <div class="navbar-right">
+                <button class="bell-btn">
+                    <i class="bi bi-bell"></i>
+                </button>
+                <img src="img/profile.png" class="profile-img" alt="">
+            </div>
+        </header>
+
+
+
+
+ <!-- Main Content Section -->       
+        <main class="main-content">
+            <!-- Main content removed per request -->
+            <section class="content-area">
+               <div class="d-flex justify-content-between align-items-center srep-top-nav">
+        <span class="fw-semibold text-secondary" style="font-size: 16px; color: #1e293b !important;">Sales Report</span>
+        <span class="text-muted" style="font-size: 13px;">Dashboard - Sales & Purchase</span>
+    </div>
+
+    <!-- Main Container -->
+    <div class="srep-main-container">
+        
+        <!-- Top Metric Cards Row -->
+        <div class="row g-4 mb-4">
+            <!-- Card 1 -->
+            <div class="col-md-4">
+                <div class="srep-metric-card card-blue">
+                    <div class="srep-metric-title">Today Sales</div>
+                    <div class="srep-metric-value">$40,000</div>
+                    <div class="srep-metric-trend">
+                        <i class="bi bi-arrow-up-right"></i> 80% From Last Day
+                    </div>
+                    <div class="srep-metric-icon icon-blue">
+                        <i class="bi bi-cart3"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="col-md-4">
+                <div class="srep-metric-card card-purple">
+                    <div class="srep-metric-title">Today Sales Return</div>
+                    <div class="srep-metric-value">$40,000</div>
+                    <div class="srep-metric-trend">
+                        <i class="bi bi-arrow-up-right"></i> 80% From Last Day
+                    </div>
+                    <div class="srep-metric-icon icon-purple">
+                        <i class="bi bi-cart-dash"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="col-md-4">
+                <div class="srep-metric-card card-amber">
+                    <div class="srep-metric-title">Closing Balance</div>
+                    <div class="srep-metric-value">$40,000</div>
+                    <div class="srep-metric-trend">
+                        <i class="bi bi-arrow-up-right"></i> 80% From Last Day
+                    </div>
+                    <div class="srep-metric-icon icon-amber">
+                        <i class="bi bi-wallet2"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Table Section -->
+        <div class="srep-card-box">
+            <!-- Header Row -->
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h3 class="srep-section-title">All Sales</h3>
+                <div class="d-flex align-items-center gap-2">
+                    <button class="srep-btn-return" data-testid="new-return-sale-btn">
+                        <i class="bi bi-arrow-return-left"></i> New Return Sale
+                    </button>
+                    <button class="srep-btn-newsale" data-testid="add-new-sale-btn">
+                        <i class="bi bi-plus-lg"></i> Add New Sale
+                    </button>
+                </div>
+            </div>
+
+            <!-- Toolbar -->
+            <div class="srep-toolbar-area">
+                <div class="d-flex align-items-center text-secondary" style="font-size: 14px;">
+                    <span>Show</span>
+                    <select class="form-select form-select-sm srep-select-entries" data-testid="entries-select">
+                        <option value="10" selected>10</option>
+                        <option value="25">25</option>
+                        <option value="50">50</option>
+                    </select>
+                    <span>entries per page</span>
+                </div>
+                <div class="d-flex align-items-center gap-2">
+                    <span style="font-size: 14px; color: #475569;">Search:</span>
+                    <div class="srep-search-wrap">
+                        <input type="text" class="form-control form-control-sm srep-search-field" placeholder="Customer, Name, Invoice" data-testid="search-input">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Table -->
+            <div class="table-responsive">
+                <table class="table srep-data-table align-middle">
+                    <thead>
+                        <tr>
+                            <th>Customer ID</th>
+                            <th>Customer Name</th>
+                            <th>Customer Phone</th>
+                            <th>Total Invoices</th>
+                            <th>Open Balance</th>
+                        </tr>
+                    </thead>
+                    <tbody data-testid="sales-report-table-body">
+                        <!-- Row 1 -->
+                        <tr class="srep-clickable-row" onclick="toggleReportBreakdown(1)" data-testid="sales-row-1">
+                            <td class="fw-medium text-dark">TYR-PN 001</td>
+                            <td>Haroon</td>
+                            <td>+92 312 3456789</td>
+                            <td>185</td>
+                            <td class="fw-semibold text-dark">PKR 1,502,500</td>
+                        </tr>
+                        <tr id="report-breakdown-1" class="d-none">
+                            <td colspan="5" class="p-0">
+                                <div class="srepbrk-container">
+                                    <div class="srepbrk-title">Multi-Invoices Breakdown</div>
+                                    <table class="table srepbrk-table align-middle">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 50px;">SL</th>
+                                                <th>Date</th>
+                                                <th>Invoice ID</th>
+                                                <th>Products</th>
+                                                <th>Sales/Return</th>
+                                                <th>Transaction Type</th>
+                                                <th>Transaction ID</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>May 29, 2026</td>
+                                                <td class="text-secondary">N/A</td>
+                                                <td class="text-secondary">N/A</td>
+                                                <td class="text-secondary">N/A</td>
+                                                <td class="text-secondary">N/A</td>
+                                                <td class="text-secondary">N/A</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>June 04, 2026</td>
+                                                <td><span class="text-warning">●</span> Invoice - 8693</td>
+                                                <td>12 Product</td>
+                                                <td><span class="srep-sale-badge">Sale</span></td>
+                                                <td>Cash</td>
+                                                <td class="text-secondary">N/A</td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>June 12, 2026</td>
+                                                <td>Invoice - 2387</td>
+                                                <td>34 Items</td>
+                                                <td><span class="srep-sale-badge">Sale</span></td>
+                                                <td>Online</td>
+                                                <td>7583957</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Row 2 -->
+                        <tr class="srep-clickable-row" onclick="toggleReportBreakdown(2)" data-testid="sales-row-2">
+                            <td class="fw-medium text-dark">TYR-PN 001</td>
+                            <td>Tariq</td>
+                            <td>+92 312 3456789</td>
+                            <td>190</td>
+                            <td class="fw-semibold text-dark">PKR 1,909,000</td>
+                        </tr>
+                        <tr id="report-breakdown-2" class="d-none">
+                            <td colspan="5" class="p-0">
+                                <div class="srepbrk-container">
+                                    <div class="srepbrk-title">Multi-Invoices Breakdown</div>
+                                    <table class="table srepbrk-table align-middle">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 50px;">SL</th>
+                                                <th>Date</th>
+                                                <th>Invoice ID</th>
+                                                <th>Products</th>
+                                                <th>Sales/Return</th>
+                                                <th>Transaction Type</th>
+                                                <th>Transaction ID</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>June 01, 2026</td>
+                                                <td>Invoice - 1102</td>
+                                                <td>10 Product</td>
+                                                <td><span class="srep-sale-badge">Sale</span></td>
+                                                <td>Cash</td>
+                                                <td class="text-secondary">N/A</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Row 3 -->
+                        <tr class="srep-clickable-row" onclick="toggleReportBreakdown(3)">
+                            <td class="fw-medium text-dark">TYR-PN 001</td>
+                            <td>Imran</td>
+                            <td>+92 312 3456789</td>
+                            <td>175</td>
+                            <td class="fw-semibold text-dark">PKR 1,579,500</td>
+                        </tr>
+                        <tr id="report-breakdown-3" class="d-none">
+                            <td colspan="5" class="p-0">
+                                <div class="srepbrk-container">
+                                    <div class="srepbrk-title">Multi-Invoices Breakdown</div>
+                                    <table class="table srepbrk-table align-middle">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 50px;">SL</th>
+                                                <th>Date</th>
+                                                <th>Invoice ID</th>
+                                                <th>Products</th>
+                                                <th>Sales/Return</th>
+                                                <th>Transaction Type</th>
+                                                <th>Transaction ID</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>June 02, 2026</td>
+                                                <td>Invoice - 1145</td>
+                                                <td>8 Items</td>
+                                                <td><span class="srep-sale-badge">Sale</span></td>
+                                                <td>Online</td>
+                                                <td>9823411</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Row 4 -->
+                        <tr class="srep-clickable-row" onclick="toggleReportBreakdown(4)">
+                            <td class="fw-medium text-dark">TYR-PN 001</td>
+                            <td>Nida</td>
+                            <td>+92 312 3456789</td>
+                            <td>220</td>
+                            <td class="fw-semibold text-dark">PKR 2,200,000</td>
+                        </tr>
+                        <tr id="report-breakdown-4" class="d-none">
+                            <td colspan="5" class="p-0">
+                                <div class="srepbrk-container">
+                                    <div class="srepbrk-title">Multi-Invoices Breakdown</div>
+                                    <table class="table srepbrk-table align-middle">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 50px;">SL</th>
+                                                <th>Date</th>
+                                                <th>Invoice ID</th>
+                                                <th>Products</th>
+                                                <th>Sales/Return</th>
+                                                <th>Transaction Type</th>
+                                                <th>Transaction ID</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>June 03, 2026</td>
+                                                <td>Invoice - 1200</td>
+                                                <td>15 Product</td>
+                                                <td><span class="srep-sale-badge">Sale</span></td>
+                                                <td>Cash</td>
+                                                <td class="text-secondary">N/A</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Row 5 -->
+                        <tr class="srep-clickable-row" onclick="toggleReportBreakdown(5)">
+                            <td class="fw-medium text-dark">TYR-PN 001</td>
+                            <td>Ali</td>
+                            <td>+92 312 3456789</td>
+                            <td>230</td>
+                            <td class="fw-semibold text-dark">PKR 2,276,000</td>
+                        </tr>
+                        <tr id="report-breakdown-5" class="d-none">
+                            <td colspan="5" class="p-0">
+                                <div class="srepbrk-container">
+                                    <div class="srepbrk-title">Multi-Invoices Breakdown</div>
+                                    <table class="table srepbrk-table align-middle">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 50px;">SL</th>
+                                                <th>Date</th>
+                                                <th>Invoice ID</th>
+                                                <th>Products</th>
+                                                <th>Sales/Return</th>
+                                                <th>Transaction Type</th>
+                                                <th>Transaction ID</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>June 04, 2026</td>
+                                                <td>Invoice - 1312</td>
+                                                <td>20 Items</td>
+                                                <td><span class="srep-sale-badge">Sale</span></td>
+                                                <td>Online</td>
+                                                <td>4492018</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Row 6 -->
+                        <tr class="srep-clickable-row" onclick="toggleReportBreakdown(6)">
+                            <td class="fw-medium text-dark">TYR-PN 001</td>
+                            <td>Fatima</td>
+                            <td>+92 312 3456789</td>
+                            <td>215</td>
+                            <td class="fw-semibold text-dark">PKR 2,018,000</td>
+                        </tr>
+                        <tr id="report-breakdown-6" class="d-none">
+                            <td colspan="5" class="p-0">
+                                <div class="srepbrk-container">
+                                    <div class="srepbrk-title">Multi-Invoices Breakdown</div>
+                                    <table class="table srepbrk-table align-middle">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 50px;">SL</th>
+                                                <th>Date</th>
+                                                <th>Invoice ID</th>
+                                                <th>Products</th>
+                                                <th>Sales/Return</th>
+                                                <th>Transaction Type</th>
+                                                <th>Transaction ID</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>June 05, 2026</td>
+                                                <td>Invoice - 1422</td>
+                                                <td>14 Product</td>
+                                                <td><span class="srep-sale-badge">Sale</span></td>
+                                                <td>Cash</td>
+                                                <td class="text-secondary">N/A</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Row 7 -->
+                        <tr class="srep-clickable-row" onclick="toggleReportBreakdown(7)">
+                            <td class="fw-medium text-dark">TYR-PN 001</td>
+                            <td>Usman</td>
+                            <td>+92 312 3456789</td>
+                            <td>198</td>
+                            <td class="fw-semibold text-dark">PKR 1,840,000</td>
+                        </tr>
+                        <tr id="report-breakdown-7" class="d-none">
+                            <td colspan="5" class="p-0">
+                                <div class="srepbrk-container">
+                                    <div class="srepbrk-title">Multi-Invoices Breakdown</div>
+                                    <table class="table srepbrk-table align-middle">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 50px;">SL</th>
+                                                <th>Date</th>
+                                                <th>Invoice ID</th>
+                                                <th>Products</th>
+                                                <th>Sales/Return</th>
+                                                <th>Transaction Type</th>
+                                                <th>Transaction ID</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>June 06, 2026</td>
+                                                <td>Invoice - 1500</td>
+                                                <td>11 Items</td>
+                                                <td><span class="srep-sale-badge">Sale</span></td>
+                                                <td>Online</td>
+                                                <td>3392104</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Row 8 -->
+                        <tr class="srep-clickable-row" onclick="toggleReportBreakdown(8)">
+                            <td class="fw-medium text-dark">TYR-PN 001</td>
+                            <td>Aisha</td>
+                            <td>+92 312 3456789</td>
+                            <td>210</td>
+                            <td class="fw-semibold text-dark">PKR 1,882,000</td>
+                        </tr>
+                        <tr id="report-breakdown-8" class="d-none">
+                            <td colspan="5" class="p-0">
+                                <div class="srepbrk-container">
+                                    <div class="srepbrk-title">Multi-Invoices Breakdown</div>
+                                    <table class="table srepbrk-table align-middle">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 50px;">SL</th>
+                                                <th>Date</th>
+                                                <th>Invoice ID</th>
+                                                <th>Products</th>
+                                                <th>Sales/Return</th>
+                                                <th>Transaction Type</th>
+                                                <th>Transaction ID</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>June 07, 2026</td>
+                                                <td>Invoice - 1610</td>
+                                                <td>9 Product</td>
+                                                <td><span class="srep-sale-badge">Sale</span></td>
+                                                <td>Cash</td>
+                                                <td class="text-secondary">N/A</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Row 9 -->
+                        <tr class="srep-clickable-row" onclick="toggleReportBreakdown(9)">
+                            <td class="fw-medium text-dark">TYR-PN 001</td>
+                            <td>Sana</td>
+                            <td>+92 312 3456789</td>
+                            <td>200</td>
+                            <td class="fw-semibold text-dark">PKR 1,750,000</td>
+                        </tr>
+                        <tr id="report-breakdown-9" class="d-none">
+                            <td colspan="5" class="p-0">
+                                <div class="srepbrk-container">
+                                    <div class="srepbrk-title">Multi-Invoices Breakdown</div>
+                                    <table class="table srepbrk-table align-middle">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 50px;">SL</th>
+                                                <th>Date</th>
+                                                <th>Invoice ID</th>
+                                                <th>Products</th>
+                                                <th>Sales/Return</th>
+                                                <th>Transaction Type</th>
+                                                <th>Transaction ID</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>June 08, 2026</td>
+                                                <td>Invoice - 1720</td>
+                                                <td>10 Items</td>
+                                                <td><span class="srep-sale-badge">Sale</span></td>
+                                                <td>Online</td>
+                                                <td>1182944</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <!-- Row 10 -->
+                        <tr class="srep-clickable-row" onclick="toggleReportBreakdown(10)">
+                            <td class="fw-medium text-dark">TYR-PN 001</td>
+                            <td>Haroon</td>
+                            <td>+92 312 3456789</td>
+                            <td>185</td>
+                            <td class="fw-semibold text-dark">PKR 1,502,500</td>
+                        </tr>
+                        <tr id="report-breakdown-10" class="d-none">
+                            <td colspan="5" class="p-0">
+                                <div class="srepbrk-container">
+                                    <div class="srepbrk-title">Multi-Invoices Breakdown</div>
+                                    <table class="table srepbrk-table align-middle">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 50px;">SL</th>
+                                                <th>Date</th>
+                                                <th>Invoice ID</th>
+                                                <th>Products</th>
+                                                <th>Sales/Return</th>
+                                                <th>Transaction Type</th>
+                                                <th>Transaction ID</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>June 09, 2026</td>
+                                                <td>Invoice - 1800</td>
+                                                <td>12 Product</td>
+                                                <td><span class="srep-sale-badge">Sale</span></td>
+                                                <td>Cash</td>
+                                                <td class="text-secondary">N/A</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Footer Pagination -->
+            <div class="srep-foot-area">
+                <div>Showing 1 to 10 of 20 entries</div>
+                <nav aria-label="Page navigation">
+                    <ul class="pagination srep-pagination mb-0">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" aria-label="Previous">&laquo;</a>
+                        </li>
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" aria-label="First">&lsaquo;</a>
+                        </li>
+                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">&rsaquo;</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Last">&raquo;</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+    </div>
+            </section>
+        </main>
+    </div>
+
+</div>
+
+<!-- Bootstrap Js -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="js/script.js"></script>
+
+</body>
+
+</html>

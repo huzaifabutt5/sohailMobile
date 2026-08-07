@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Add New Roles</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body class="dashboard-page">
+
+<div class="dashboard-wrapper">
+    <!-- ================= Desktop Sidebar ================= -->
+
+    <aside class="sidebar">
+
+        <!-- Logo -->
+        <div class="sidebar-logo">
+
+            <img src="img/logo.png" alt="Logo">
+
+            <h4>Sohail Mobile</h4>
+
+        </div>
+
+        <!-- Sidebar Menu -->
+
+        <ul class="sidebar-menu">
+
+            <li class="active">
+                <a href="dashboard.html">
+                    <i class="bi bi-house-door"></i>
+                    Dashboard
+                </a>
+            </li>
+
+            <li class="menu-heading">Vendor Management</li>
+
+            <li>
+                <a href="manage-vendor.html">
+                    <i class="bi bi-person"></i>
+                    Manage Vendor
+                </a>
+            </li>
+
+            <li class="menu-heading">
+                Customer Relationship Management
+            </li>
+
+            <li>
+                <a href="manage-customer.html">
+                    <i class="bi bi-person"></i>
+                    Manage Customer
+                </a>
+            </li>
+
+            <li class="menu-heading">
+                Inventory Management
+            </li>
+
+            <li><a href="category-listing.html"><i class="bi bi-box"></i>Category Listing</a></li>
+
+            <li><a href="brand-model.html"><i class="bi bi-phone"></i>Brand & Model</a></li>
+
+            <li><a href="listing-product.html"><i class="bi bi-list"></i>Listing Product</a></li>
+
+            <li><a href="stock-listing.html"><i class="bi bi-archive"></i>Stock Listing</a></li>
+
+            <li class="menu-heading">
+                Sales & Purchase
+            </li>
+
+            <li><a href="sales-report.html"><i class="bi bi-cart"></i>Sales Report</a></li>
+
+            <li><a href="sales.html"><i class="bi bi-cart-check"></i>Sales</a></li>
+
+            <li><a href="sales-return.html"><i class="bi bi-arrow-return-left"></i>Sales Return</a></li>
+
+            <li><a href="purchase-report.html"><i class="bi bi-bag"></i>Purchase Report</a></li>
+
+            <li><a href="purchase.html"><i class="bi bi-bag-check"></i>Purchase</a></li>
+
+            <li><a href="purchase-return.html"><i class="bi bi-arrow-return-left"></i>Purchase Return</a></li>
+
+            <li class="menu-heading">
+                Profit & Loss Management
+            </li>
+
+            <li><a href="open-balance-sheet.html"><i class="bi bi-graph-up"></i>Open Balance Sheet</a></li>
+
+            <li><a href="pnl-report.html"><i class="bi bi-bar-chart"></i>PnL Report</a></li>
+
+            <li class="menu-heading">
+                Expenses Management
+            </li>
+
+            <li><a href="manage-expense.html"><i class="bi bi-wallet2"></i>Manage Expense</a></li>
+
+            <li class="menu-heading">
+                Role Management
+            </li>
+
+            <li><a href="manage-roles.html"><i class="bi bi-person-gear"></i>Manage Roles</a></li>
+
+        </ul>
+
+        <!-- Bottom Buttons -->
+
+        <div class="sidebar-footer">
+            <a href="account-setting.html" class="account-btn">
+
+                <i class="bi bi-gear"></i>
+
+                Account Setting
+
+            </a>
+
+            <button class="logout-btn">
+
+                <i class="bi bi-box-arrow-right"></i>
+
+                Logout
+
+            </button>
+
+        </div>
+
+    </aside>
+
+    <div class="main-area">
+        <header class="top-navbar">
+            <div class="navbar-left">
+                <button id="sidebarToggle" class="toggle-btn" type="button" aria-label="Toggle Sidebar">
+                    <i class="bi bi-list"></i>
+                </button>
+
+                <div class="search-box">
+                    <i class="bi bi-search"></i>
+                    <input type="text" placeholder="Search">
+                </div>
+            </div>
+
+            <div class="navbar-right">
+                <button class="bell-btn">
+                    <i class="bi bi-bell"></i>
+                </button>
+                <img src="img/profile.png" class="profile-img" alt="">
+            </div>
+        </header>
+
+
+
+
+ <!-- Main Content Section -->       
+        <main class="main-content">
+            <!-- Main content removed per request -->
+            <section class="content-area">
+                <div class="add-new-role-page">
+
+    <!-- Page Header -->
+    <div class="add-new-role-page-header">
+        <h4>Manage Roles</h4>
+
+        <span>Dashboard - Role Management</span>
+    </div>
+
+
+    <!-- Role Information Card -->
+    <div class="add-new-role-information-card">
+
+        <div class="add-new-role-information-header">
+            <h5>User Information</h5>
+        </div>
+
+        <div class="add-new-role-information-body">
+
+            <div class="row g-0">
+
+                <!-- User Name -->
+                <div class="col-md-6 add-new-role-field pe-md-2">
+                    <label for="addNewRoleUserName">
+                        User Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="addNewRoleUserName"
+                        class="form-control add-new-role-input"
+                        placeholder="User Name">
+                </div>
+
+
+                <!-- Role Name -->
+                <div class="col-md-6 add-new-role-field ps-md-2">
+                    <label for="addNewRoleName">
+                        Role Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="addNewRoleName"
+                        class="form-control add-new-role-input"
+                        placeholder="Role Name">
+                </div>
+
+
+                <!-- Email Address -->
+                <div class="col-md-6 add-new-role-field pe-md-2">
+                    <label for="addNewRoleEmail">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="addNewRoleEmail"
+                        class="form-control add-new-role-input"
+                        placeholder="Email Address">
+                </div>
+
+
+                <!-- Phone Number -->
+                <div class="col-md-6 add-new-role-field ps-md-2">
+                    <label for="addNewRolePhone">
+                        Phone Number
+                    </label>
+
+                    <input
+                        type="text"
+                        id="addNewRolePhone"
+                        class="form-control add-new-role-input"
+                        placeholder="Phone Number">
+                </div>
+
+
+                <!-- Access -->
+                <div class="col-12 add-new-role-field">
+                    <label for="addNewRoleAccess">
+                        Access
+                    </label>
+
+                    <input
+                        type="text"
+                        id="addNewRoleAccess"
+                        class="form-control add-new-role-input"
+                        placeholder="Description">
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Bottom Actions -->
+    <div class="add-new-role-bottom-actions">
+
+        <button
+            type="button"
+            class="add-new-role-cancel-btn">
+            Cancel
+        </button>
+
+        <button
+            type="button"
+            class="add-new-role-submit-btn">
+            Add New Role
+        </button>
+
+    </div>
+
+</div>
+            </section>
+        </main>
+    </div>
+
+</div>
+
+<!-- Bootstrap Js -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="js/script.js"></script>
+
+</body>
+
+</html>
