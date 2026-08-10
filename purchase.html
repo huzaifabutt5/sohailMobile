@@ -92,9 +92,9 @@
             <li><a href="purchase-report.html"><i class="bi bi-bag"></i>Purchase Report</a></li>
 
             <li><a href="purchase.html"><i class="bi bi-bag-check"></i>Purchase</a></li>
+            <li><a href="purchase-return.html"><i class="bi bi-bag-check"></i>Purchase Return</a></li>
 
-            <li><a href="purchase-return.html"><i class="bi bi-arrow-return-left"></i>Purchase Return</a></li>
-
+           
             <li class="menu-heading">
                 Profit & Loss Management
             </li>
@@ -168,19 +168,19 @@
         <main class="main-content">
             <!-- Main content removed per request -->
             <section class="content-area">
-                <div class="purchase-wrapper">
+                <div class="main-container">
         <!-- Top Header -->
-        <div class="purchase-header">
+        <div class="top-header">
             <h4>Purchase</h4>
             <span>Dashboard - Inventory Management</span>
         </div>
 
         <!-- Payment Mode Selection -->
-        <div class="card purchase-card">
-            <div class="purchase-section-title">Payment Mode Selection</div>
+        <div class="card card-custom">
+            <div class="section-title">Payment Mode Selection</div>
             <div class="mb-0">
-                <label class="purchase-form-label">Payment Mode</label>
-                <select class="form-select purchase-select">
+                <label class="form-label">Payment Mode</label>
+                <select class="form-select">
                     <option selected>--Select Payment Mode -- ("Full Payment (By Default Active)" , "Partial Payment" & "Credit"</option>
                     <option value="full">Full Payment (By Default Active)</option>
                     <option value="partial">Partial Payment</option>
@@ -190,11 +190,11 @@
         </div>
 
         <!-- Vendor Information -->
-        <div class="card purchase-card">
-            <div class="purchase-section-title">Vendor Information</div>
+        <div class="card card-custom">
+            <div class="section-title">Vendor Information</div>
             <div class="mb-0">
-                <label class="purchase-form-label">Vendor</label>
-                <select class="form-select purchase-select">
+                <label class="form-label">Vendor</label>
+                <select class="form-select">
                     <option selected>--Select Vendor --</option>
                     <option value="vendor1">Vendor A</option>
                     <option value="vendor2">Vendor B</option>
@@ -203,20 +203,20 @@
         </div>
 
         <!-- Product Information -->
-        <div class="card purchase-card">
+        <div class="card card-custom">
             <div class="d-flex justify-content-between align-items-center mb-3">
-                <div class="purchase-section-title mb-0">Product Information</div>
-                <button class="btn purchase-btn-success btn-sm"><i class="bi bi-plus-lg me-1"></i> Add More Product</button>
+                <div class="section-title mb-0">Product Information</div>
+                <button class="btn btn-custom-success btn-sm"><i class="bi bi-plus-lg me-1"></i> Add More Product</button>
             </div>
 
             <div class="mb-3">
-                <label class="purchase-form-label">Invoice ID</label>
-                <input type="text" class="form-control purchase-input" placeholder="Invoice ID (Auto Generate)" disabled>
+                <label class="form-label">Invoice ID</label>
+                <input type="text" class="form-control" placeholder="Invoice ID (Auto Generate)" disabled>
             </div>
 
             <!-- Table -->
             <div class="table-responsive mb-4">
-                <table class="table purchase-table">
+                <table class="table table-custom">
                     <thead>
                         <tr>
                             <th>SL</th>
@@ -254,76 +254,77 @@
             <!-- Product Form Inputs -->
             <div class="row g-3">
                 <div class="col-md-6">
-                    <label class="purchase-form-label">Category</label>
-                    <input type="text" class="form-control purchase-input" placeholder="Category">
+                    <label class="form-label">Category</label>
+                    <input type="text" class="form-control" placeholder="Category">
                 </div>
                 <div class="col-md-6">
-                    <label class="purchase-form-label">Brand</label>
-                    <input type="text" class="form-control purchase-input" placeholder="Brand">
+                    <label class="form-label">Brand</label>
+                    <input type="text" class="form-control" placeholder="Brand">
                 </div>
                 <div class="col-md-6">
-                    <label class="purchase-form-label">Model</label>
-                    <input type="text" class="form-control purchase-input" placeholder="Model">
+                    <label class="form-label">Model</label>
+                    <input type="text" class="form-control" placeholder="Model">
                 </div>
                 <div class="col-md-6">
-                    <label class="purchase-form-label">Company</label>
-                    <input type="text" class="form-control purchase-input" placeholder="Company">
+                    <label class="form-label">Company</label>
+                    <input type="text" class="form-control" placeholder="Company">
                 </div>
                 <div class="col-md-6">
-                    <label class="purchase-form-label">Product</label>
-                    <input type="text" class="form-control purchase-input" placeholder="Product (Auto Generated)">
+                    <label class="form-label">Product</label>
+                    <input type="text" class="form-control" placeholder="Product (Auto Generated)">
                 </div>
                 <div class="col-md-6">
-                    <label class="purchase-form-label">Color</label>
-                    <input type="text" class="form-control purchase-input" placeholder="color">
+                    <label class="form-label">Color</label>
+                    <input type="text" class="form-control" placeholder="color">
                 </div>
                 <div class="col-md-6">
-                    <label class="purchase-form-label">Quantity</label>
-                    <input type="text" class="form-control purchase-input" placeholder="Quantity">
+                    <label class="form-label">Quantity</label>
+                    <input type="text" class="form-control" placeholder="Quantity">
                 </div>
                 <div class="col-md-6">
-                    <label class="purchase-form-label">Unit price</label>
-                    <input type="text" class="form-control purchase-input" placeholder="Unit price">
+                    <label class="form-label">Unit price</label>
+                    <input type="text" class="form-control" placeholder="Unit price">
                 </div>
             </div>
 
             <div class="d-flex justify-content-end mt-4">
-                <button class="btn purchase-btn-primary">Update</button>
+                <button class="btn btn-custom-primary">Update</button>
             </div>
         </div>
 
         <!-- Payment Information -->
-        <div class="card purchase-card">
-            <div class="purchase-section-title">Payment Information</div>
+        <div class="card card-custom">
+            <div class="section-title">Payment Information</div>
             <div class="row g-3">
                 <div class="col-12">
-                    <label class="purchase-form-label">Net Total</label>
-                    <input type="text" class="form-control purchase-input" placeholder="Net Total">
+                    <label class="form-label">Net Total</label>
+                    <input type="text" class="form-control" placeholder="Net Total">
                 </div>
                 <div class="col-md-6">
-                    <label class="purchase-form-label">Payment Type</label>
-                    <input type="text" class="form-control purchase-input" placeholder="Bank Transfer">
+                    <label class="form-label">Payment Type</label>
+                    <input type="text" class="form-control" placeholder="Bank Transfer">
                 </div>
                 <div class="col-md-6">
-                    <label class="purchase-form-label">Transaction ID</label>
-                    <input type="text" class="form-control purchase-input" placeholder="Transaction">
+                    <label class="form-label">Transaction ID</label>
+                    <input type="text" class="form-control" placeholder="Transaction">
                 </div>
                 <div class="col-md-6">
-                    <label class="purchase-form-label">Paid Amount</label>
-                    <input type="text" class="form-control purchase-input" placeholder="Paid Amount">
+                    <label class="form-label">Paid Amount</label>
+                    <input type="text" class="form-control" placeholder="Paid Amount">
                 </div>
                 <div class="col-md-6">
-                    <label class="purchase-form-label">Remaining Amount</label>
-                    <input type="text" class="form-control purchase-input" placeholder="Remaining Amount">
+                    <label class="form-label">Remaining Amount</label>
+                    <input type="text" class="form-control" placeholder="Remaining Amount">
                 </div>
             </div>
 
-            <div class="d-flex justify-content-end gap-2 mt-4">
-                <button class="btn purchase-btn-secondary">Cancel</button>
-                <button class="btn purchase-btn-primary">Add New Entry</button>
-            </div>
+            
         </div>
     </div>
+     <div class="d-flex justify-content-end gap-2 mt-4 btn-back">
+                <button class="btn btn-custom-secondary">Cancel</button>
+                <button class="btn btn-custom-primary">Add New Entry</button>
+            </div>
             </section>
         </main>
     </div>
@@ -338,3 +339,4 @@
 </body>
 
 </html>
+

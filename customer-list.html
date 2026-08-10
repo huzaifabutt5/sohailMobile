@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Customer List</title>
+    <title>Listing Product</title>
 
     <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -40,8 +40,7 @@
 
         <ul class="sidebar-menu">
 
-            <li>
-
+            <li class="active">
                 <a href="dashboard.html">
                     <i class="bi bi-house-door"></i>
                     Dashboard
@@ -50,7 +49,7 @@
 
             <li class="menu-heading">Vendor Management</li>
 
-            <li class="active">
+            <li>
                 <a href="manage-vendor.html">
                     <i class="bi bi-person"></i>
                     Manage Vendor
@@ -93,8 +92,9 @@
             <li><a href="purchase-report.html"><i class="bi bi-bag"></i>Purchase Report</a></li>
 
             <li><a href="purchase.html"><i class="bi bi-bag-check"></i>Purchase</a></li>
+            <li><a href="purchase-return.html"><i class="bi bi-bag-check"></i>Purchase Return</a></li>
 
-            <li><a href="purchase-return.html"><i class="bi bi-arrow-return-left"></i>Purchase Return</a></li>
+           
 
             <li class="menu-heading">
                 Profit & Loss Management
@@ -167,343 +167,307 @@
 
  <!-- Main Content Section -->       
         <main class="main-content">
+            <!-- Main content removed per request -->
             <section class="content-area">
-                <div class="view-vendor-header">
-                    <h1>View Vendor</h1>
-                    <span class="page-badge">Dashboard - Vendor Management</span>
-                </div>
-
-                <div class="vendor-summary-grid">
-
-    <div class="vendor-summary-card blue">
-        <div class="vendor-summary-content">
-            <h6>Today Purchase</h6>
-            <h2>$40,000</h2>
-        </div>
-
-        <div class="vendor-summary-icon">
-            <i class="bi bi-cart-fill"></i>
-        </div>
+                 <div class="d-flex justify-content-between align-items-center plist-top-nav">
+        <span class="fw-semibold text-secondary" style="font-size: 16px; color: #1e293b !important;">Listing Product</span>
+        <span class="text-muted" style="font-size: 13px;">Dashboard - Inventory Management</span>
     </div>
 
-    <div class="vendor-summary-card purple">
-        <div class="vendor-summary-content">
-            <h6>Today Purchase Return</h6>
-            <h2>$40,000</h2>
-        </div>
-
-        <div class="vendor-summary-icon">
-            <i class="bi bi-cart-fill"></i>
-        </div>
-    </div>
-
-    <div class="vendor-summary-card orange">
-        <div class="vendor-summary-content">
-            <h6>Remaining Payment</h6>
-            <h2>$40,000</h2>
-
-            <button class="btn btn-primary" id="payBtn">
-                <i class="bi bi-cash-coin me-2"></i>
-                Get Payment
+    <!-- Main Content Card -->
+    <div class="plist-main-wrap">
+        <!-- Header -->
+        <div class="plist-head-row">
+            <h2 class="plist-title-main">All Products</h2>
+            <button class="plist-btn-primary" data-testid="add-new-product-btn"
+            onclick="location.href='add-new-product.html'">
+               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+  <path d="M18.3333 5.62467H16.0092C15.5083 5.62467 15.2578 5.62467 15.0216 5.55316C14.7855 5.48165 14.577 5.34272 14.1602 5.06484C13.535 4.64803 12.8218 4.17255 12.4675 4.06527C12.1132 3.95801 11.7375 3.95801 10.986 3.95801C9.96421 3.95801 9.30554 3.95801 8.84613 4.14831C8.38671 4.33861 8.02543 4.6999 7.30285 5.42247L6.66695 6.05837C6.50411 6.22122 6.42268 6.30264 6.37242 6.38302C6.18608 6.68102 6.20673 7.06388 6.42403 7.3401C6.48266 7.41462 6.57237 7.48681 6.75178 7.63119C7.41493 8.16487 8.37096 8.11161 8.97146 7.50752L9.99996 6.47289H10.8333L15.8333 11.5026C16.2935 11.9656 16.2935 12.7162 15.8333 13.1792C15.373 13.6422 14.6269 13.6422 14.1666 13.1792L13.75 12.7601M11.25 13.5984L12.0833 14.4366C12.5435 14.8996 13.2897 14.8996 13.75 14.4366C14.2102 13.9737 14.2102 13.2231 13.75 12.7601L11.25 10.2452M9.58329 11.9317L11.25 13.5984C11.7102 14.0613 11.7102 14.812 11.25 15.275C10.7897 15.7379 10.0435 15.7379 9.58329 15.275L8.33329 14.0175M1.66663 12.2913H1.93241C2.62336 12.2913 2.96884 12.2913 3.27858 12.4215C3.58833 12.5517 3.83008 12.7985 4.3136 13.2921L6.66663 15.6941C7.12687 16.1571 7.87306 16.1571 8.33329 15.6941C8.79354 15.2311 8.79354 14.4805 8.33329 14.0175L7.91663 13.5984" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M18.3333 12.292H16.25" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M7.08329 5.625H1.66663" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+</svg>Add New Product
             </button>
         </div>
 
-        <div class="vendor-summary-icon">
-            <i class="bi bi-cart-fill"></i>
-        </div>
-    </div>
-    <div class="custom-modal" id="paymentModal">
-
-    <div class="payment-modal">
-
-        <div class="modal-header border-bottom">
-            <h4 class="mb-0">Get Amount</h4>
-        </div>
-
-        <div class="modal-body">
-
-            <div class="mb-3">
-                <label class="form-label">Payable Amount</label>
-                <input type="text" class="form-control bg-light" value="Rs. 20,000" readonly>
-            </div>
-
-            <div class="mb-3">
-                <label class="form-label">Paid Amount</label>
-                <input type="number" class="form-control" placeholder="Enter Amount to Pay">
-            </div>
-
-            <div class="mb-3">
-                <label class="form-label">Payment Type</label>
-                <select class="form-select">
-                    <option selected disabled>-- Select Option --</option>
-                    <option>Cash</option>
-                    <option>Bank Transfer</option>
-                    <option>JazzCash</option>
+        <!-- Toolbar -->
+        <div class="plist-toolbar-area">
+            <div class="d-flex align-items-center text-secondary" style="font-size: 14px;">
+                <span>Show</span>
+                <select class="form-select form-select-sm plist-select-entries" data-testid="entries-select">
+                    <option value="10" selected>10</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
                 </select>
+                <span>entries per page</span>
+            </div>
+            <div class="search-box-inline">
+                        <label for="searchVendor">Search:</label>
+                        <input id="searchVendor" type="text" placeholder="Search Category">
+                        <button class="btn btn-primary" id="calendarBtn">
+    <i class="bi bi-calendar-event"></i>
+</button>
+    <div class="modal fade" id="dateFilterModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content date-filter-modal">
+
+            <div class="modal-header">
+                <h5 class="modal-title">Select Date</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
 
-            <div class="mb-4">
-                <label class="form-label">Transaction ID</label>
-                <input type="text" class="form-control" placeholder="Transaction ID">
-            </div>
+            <div class="modal-body">
 
-            <div class="row">
-                <div class="col-6">
-                    <button class="btn btn-light w-100" id="closeModal">
-                        Cancel
-                    </button>
+                <div class="row">
+                    <div class="col-6">
+                        <label>From Date</label>
+                        <input type="date" class="form-control">
+                    </div>
+
+                    <div class="col-6">
+                        <label>To Date</label>
+                        <input type="date" class="form-control">
+                    </div>
                 </div>
 
-                <div class="col-6">
-                    <button class="btn btn-primary w-100">
-                        Get Payment
-                    </button>
-                </div>
             </div>
-         </div>
+
+            <div class="modal-footer">
+
+                <button type="button" class="btn btn-reset" data-bs-dismiss="modal">
+                    Reset
+                </button>
+
+                <button type="button" class="btn btn-filter">
+                    Apply Filter
+                </button>
+
+            </div>
+
         </div>
     </div>
-    </div>
-
-    <div class="purchase-report-card">
-                    <div class="report-head">
-                        <h2>Sale Report</h2>
+</div>
                     </div>
+        </div>
 
-                    <div class="report-toolbar">
-                        <div class="entries-box">
-                            <div class="entries-select-wrap">
-                                <select id="entries" class="form-select form-select-sm">
-                                    <option selected>10</option>
-                                    <option>20</option>
-                                    <option>50</option>
-                                </select>
+        <!-- Table -->
+        <div class="table-responsive">
+            <table class="table plist-data-table align-middle">
+                <thead>
+                    <tr>
+                        <th style="width: 60px;">SL</th>
+                        <th>Category</th>
+                        <th>Brand</th>
+                        <th>Model</th>
+                        <th>Company</th>
+                        <th>Product Name</th>
+                        <th>Color</th>
+                        <th style="width: 120px;">Actions</th>
+                    </tr>
+                </thead>
+                <tbody data-testid="products-listing-table-body">
+                    <tr>
+                        <td>1</td>
+                        <td>Display Panels</td>
+                        <td>Samsung</td>
+                        <td>6S Plus</td>
+                        <td>Apex Mobile.inc</td>
+                        <td class="fw-medium text-dark">LCD Panel</td>
+                        <td>
+                            <span class="plist-color-badge">Green</span>
+                            <span class="plist-color-badge">Blue</span>
+                        </td>
+                        <td>
+                            <div class="plist-action-group">
+                                <button class="plist-act-btn plist-btn-view" title="View"><i class="bi bi-eye"></i></button>
+                                <button class="plist-act-btn plist-btn-edit" title="Edit"><i class="bi bi-pencil-square"></i></button>
                             </div>
-                            <span>entries per page</span>
-                        </div>
-
-                        <div class="report-search-area">
-                            <label for="searchProduct">Search:</label>
-                            <input id="searchProduct" type="text" placeholder="Search Product">
-                        </div>
-                    </div>
-
-<div class="table-wrap table-responsive">
-                        <table class="table purchase-table align-middle mb-0">
-                            <thead>
-                                <tr>
-                                    <th>SL</th>
-                                    <th>Date</th>
-                                    <th>Invoice ID</th>
-                                    <th>Products</th>
-                                    <th>Sale/Return</th>
-                                    <th>Transaction Type</th>
-                                    <th>Transaction ID</th>
-                                    <th>Payable Amount</th>
-                                    <th>Paid Amount</th>
-                                    <th>Open Balance</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>June 15,2026</td>
-                                    <td>N/A</td>
-                                    <td>N/A</td>
-                                    <td>N/A</td>
-                                    <td>Bank Transfer</td>
-                                    <td>Trx 6tbgGY7189</td>
-                                    <td>$40,000</td>
-                                    <td>$10,000</td>
-                                    <td>$30,000</td>
-                                    <td>
-                                        <div class="action-group">
-                                            <button type="button" class="action-btn print-btn" aria-label="Print"><i class="bi bi-printer"></i></button>
-                                            <button type="button" class="action-btn view-btn" aria-label="View"><i class="bi bi-eye"></i></button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>June 15,2026</td>
-                                    <td>Invoice - 0001</td>
-                                    <td>5 Products</td>
-                                    <td><span class="pill-tag">Sale</span></td>
-                                    <td>Cash</td>
-                                    <td>N/A</td>
-                                    <td>$40,000</td>
-                                    <td>$10,000</td>
-                                    <td>$30,000</td>
-                                    <td>
-                                        <div class="action-group">
-                                            <button type="button" class="action-btn print-btn" aria-label="Print"><i class="bi bi-printer"></i></button>
-                                            <button type="button" class="action-btn view-btn" aria-label="View"><i class="bi bi-eye"></i></button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>June 15,2026</td>
-                                    <td>Invoice -0002</td>
-                                    <td>7 Products</td>
-                                    <td><span class="pill-tag">Sale</span></td>
-                                    <td>Cash</td>
-                                    <td>N/A</td>
-                                    <td>$40,000</td>
-                                    <td>$10,000</td>
-                                    <td>$30,000</td>
-                                    <td>
-                                        <div class="action-group">
-                                            <button type="button" class="action-btn print-btn" aria-label="Print"><i class="bi bi-printer"></i></button>
-                                            <button type="button" class="action-btn view-btn" aria-label="View"><i class="bi bi-eye"></i></button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td>June 15,2026</td>
-                                    <td>Invoice -0003</td>
-                                    <td>10 Products</td>
-                                    <td><span class="pill-tag">Sale</span></td>
-                                    <td>Cash</td>
-                                    <td>N/A</td>
-                                    <td>$40,000</td>
-                                    <td>$10,000</td>
-                                    <td>$30,000</td>
-                                    <td>
-                                        <div class="action-group">
-                                            <button type="button" class="action-btn print-btn" aria-label="Print"><i class="bi bi-printer"></i></button>
-                                            <button type="button" class="action-btn view-btn" aria-label="View"><i class="bi bi-eye"></i></button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>5</td>
-                                    <td>June 15,2026</td>
-                                    <td>Invoice -0004</td>
-                                    <td>15 Products</td>
-                                    <td><span class="pill-tag">Sale</span></td>
-                                    <td>Cash</td>
-                                    <td>N/A</td>
-                                    <td>$40,000</td>
-                                    <td>$10,000</td>
-                                    <td>$30,000</td>
-                                    <td>
-                                        <div class="action-group">
-                                            <button type="button" class="action-btn print-btn" aria-label="Print"><i class="bi bi-printer"></i></button>
-                                            <button type="button" class="action-btn view-btn" aria-label="View"><i class="bi bi-eye"></i></button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>6</td>
-                                    <td>June 15,2026</td>
-                                    <td>Invoice -0005</td>
-                                    <td>20 Products</td>
-                                    <td><span class="pill-tag">Sale</span></td>
-                                    <td>Cash</td>
-                                    <td>N/A</td>
-                                    <td>$40,000</td>
-                                    <td>$10,000</td>
-                                    <td>$30,000</td>
-                                    <td>
-                                        <div class="action-group">
-                                            <button type="button" class="action-btn print-btn" aria-label="Print"><i class="bi bi-printer"></i></button>
-                                            <button type="button" class="action-btn view-btn" aria-label="View"><i class="bi bi-eye"></i></button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>7</td>
-                                    <td>June 15,2026</td>
-                                    <td>Invoice -0006</td>
-                                    <td>25 Products</td>
-                                    <td><span class="pill-tag">Sale</span></td>
-                                    <td>Cash</td>
-                                    <td>N/A</td>
-                                    <td>$40,000</td>
-                                    <td>$10,000</td>
-                                    <td>$30,000</td>
-                                    <td>
-                                        <div class="action-group">
-                                            <button type="button" class="action-btn print-btn" aria-label="Print"><i class="bi bi-printer"></i></button>
-                                            <button type="button" class="action-btn view-btn" aria-label="View"><i class="bi bi-eye"></i></button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>8</td>
-                                    <td>June 15,2026</td>
-                                    <td>Invoice -0007</td>
-                                    <td>30 Products</td>
-                                    <td><span class="pill-tag">Sale</span></td>
-                                    <td>Cash</td>
-                                    <td>N/A</td>
-                                    <td>$40,000</td>
-                                    <td>$10,000</td>
-                                    <td>$30,000</td>
-                                    <td>
-                                        <div class="action-group">
-                                            <button type="button" class="action-btn print-btn" aria-label="Print"><i class="bi bi-printer"></i></button>
-                                            <button type="button" class="action-btn view-btn" aria-label="View"><i class="bi bi-eye"></i></button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>9</td>
-                                    <td>June 15,2026</td>
-                                    <td>Invoice -0008</td>
-                                    <td>50 Products</td>
-                                    <td><span class="pill-tag">Sale</span></td>
-                                    <td>Cash</td>
-                                    <td>N/A</td>
-                                    <td>$40,000</td>
-                                    <td>$10,000</td>
-                                    <td>$30,000</td>
-                                    <td>
-                                        <div class="action-group">
-                                            <button type="button" class="action-btn print-btn" aria-label="Print"><i class="bi bi-printer"></i></button>
-                                            <button type="button" class="action-btn view-btn" aria-label="View"><i class="bi bi-eye"></i></button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>10</td>
-                                    <td>June 15,2026</td>
-                                    <td>Invoice -0001</td>
-                                    <td>100 Products</td>
-                                    <td><span class="pill-tag">Sale</span></td>
-                                    <td>Cash</td>
-                                    <td>N/A</td>
-                                    <td>$40,000</td>
-                                    <td>$10,000</td>
-                                    <td>$30,000</td>
-                                    <td>
-                                        <div class="action-group">
-                                            <button type="button" class="action-btn print-btn" aria-label="Print"><i class="bi bi-printer"></i></button>
-                                            <button type="button" class="action-btn view-btn" aria-label="View"><i class="bi bi-eye"></i></button>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <div class="purchase-pagination">
-                        <span>Showing 1 to 10 of 20 entries</span>
-                        <div class="page-buttons">
-                            <button type="button" class="page-arrow"><i class="bi bi-chevron-left"></i></button>
-                            <button type="button" class="page-num active">1</button>
-                            <button type="button" class="page-num">2</button>
-                            <button type="button" class="page-arrow"><i class="bi bi-chevron-right"></i></button>
-                        </div>
-                    </div>
-                </div>
-
-
-
-  </section>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>IC / Board Components</td>
+                        <td>Apple</td>
+                        <td>XS Max</td>
+                        <td>Apex Mobile.inc</td>
+                        <td class="fw-medium text-dark">IC Panel</td>
+                        <td>
+                            <span class="plist-color-badge">Green</span>
+                            <span class="plist-color-badge">Red</span>
+                        </td>
+                        <td>
+                            <div class="plist-action-group">
+                                <button class="plist-act-btn plist-btn-view" title="View"><i class="bi bi-eye"></i></button>
+                                <button class="plist-act-btn plist-btn-edit" title="Edit"><i class="bi bi-pencil-square"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Display Panels</td>
+                        <td>LG</td>
+                        <td>J7</td>
+                        <td>Apex Mobile.inc</td>
+                        <td class="fw-medium text-dark">OLED Panel</td>
+                        <td>
+                            <span class="plist-color-badge">Silver</span>
+                            <span class="plist-color-badge">Blue</span>
+                        </td>
+                        <td>
+                            <div class="plist-action-group">
+                                <button class="plist-act-btn plist-btn-view" title="View"><i class="bi bi-eye"></i></button>
+                                <button class="plist-act-btn plist-btn-edit" title="Edit"><i class="bi bi-pencil-square"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Charging Components</td>
+                        <td>Huawei</td>
+                        <td>A05</td>
+                        <td>Apex Mobile.inc</td>
+                        <td class="fw-medium text-dark">Charging Strip</td>
+                        <td>
+                            <span class="plist-color-badge">Red</span>
+                            <span class="plist-color-badge">Blue</span>
+                        </td>
+                        <td>
+                            <div class="plist-action-group">
+                                <button class="plist-act-btn plist-btn-view" title="View"><i class="bi bi-eye"></i></button>
+                                <button class="plist-act-btn plist-btn-edit" title="Edit"><i class="bi bi-pencil-square"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Audio Components</td>
+                        <td>Sunny</td>
+                        <td>XR</td>
+                        <td>Apex Mobile.inc</td>
+                        <td class="fw-medium text-dark">Ringer Box</td>
+                        <td>
+                            <span class="plist-color-badge">Green</span>
+                            <span class="plist-color-badge">Blue</span>
+                        </td>
+                        <td>
+                            <div class="plist-action-group">
+                                <button class="plist-act-btn plist-btn-view" title="View"><i class="bi bi-eye"></i></button>
+                                <button class="plist-act-btn plist-btn-edit" title="Edit"><i class="bi bi-pencil-square"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Touch & Glass</td>
+                        <td>Corning</td>
+                        <td>OCA R8</td>
+                        <td>Apex Mobile.inc</td>
+                        <td class="fw-medium text-dark">OCA Glass</td>
+                        <td>
+                            <span class="plist-color-badge">Red</span>
+                            <span class="plist-color-badge">Blue</span>
+                        </td>
+                        <td>
+                            <div class="plist-action-group">
+                                <button class="plist-act-btn plist-btn-view" title="View"><i class="bi bi-eye"></i></button>
+                                <button class="plist-act-btn plist-btn-edit" title="Edit"><i class="bi bi-pencil-square"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Buttons & Flex Cables</td>
+                        <td>Foxconn</td>
+                        <td>B1</td>
+                        <td>Apex Mobile.inc</td>
+                        <td class="fw-medium text-dark">On Off (Power)</td>
+                        <td>
+                            <span class="plist-color-badge">Silver</span>
+                            <span class="plist-color-badge">Blue</span>
+                        </td>
+                        <td>
+                            <div class="plist-action-group">
+                                <button class="plist-act-btn plist-btn-view" title="View"><i class="bi bi-eye"></i></button>
+                                <button class="plist-act-btn plist-btn-edit" title="Edit"><i class="bi bi-pencil-square"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Mobile Phone</td>
+                        <td>Itel</td>
+                        <td>Y9 Prime</td>
+                        <td>Apex Mobile.inc</td>
+                        <td class="fw-medium text-dark">Huawei</td>
+                        <td>
+                            <span class="plist-color-badge">Green</span>
+                            <span class="plist-color-badge">Red</span>
+                        </td>
+                        <td>
+                            <div class="plist-action-group">
+                                <button class="plist-act-btn plist-btn-view" title="View"><i class="bi bi-eye"></i></button>
+                                <button class="plist-act-btn plist-btn-edit" title="Edit"><i class="bi bi-pencil-square"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Mobile Phones</td>
+                        <td>Techno</td>
+                        <td>13 Pro</td>
+                        <td>Apex Mobile.inc</td>
+                        <td class="fw-medium text-dark">iPhone</td>
+                        <td>
+                            <span class="plist-color-badge">Silver</span>
+                            <span class="plist-color-badge">Blue</span>
+                        </td>
+                        <td>
+                            <div class="plist-action-group">
+                                <button class="plist-act-btn plist-btn-view" title="View"><i class="bi bi-eye"></i></button>
+                                <button class="plist-act-btn plist-btn-edit" title="Edit"><i class="bi bi-pencil-square"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>Mobile Phones</td>
+                        <td>Vivo</td>
+                        <td>Reno 6</td>
+                        <td>Apex Mobile.inc</td>
+                        <td class="fw-medium text-dark">Oppo</td>
+                        <td>
+                            <span class="plist-color-badge">Red</span>
+                            <span class="plist-color-badge">Blue</span>
+                        </td>
+                        <td>
+                            <div class="plist-action-group">
+                                <button class="plist-act-btn plist-btn-view" title="View"><i class="bi bi-eye"></i></button>
+                                <button class="plist-act-btn plist-btn-edit" title="Edit"><i class="bi bi-pencil-square"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+<tr>
+                        <td>11</td>
+                        <td>Mobile Phones</td>
+                        <td>Vivo</td>
+                        <td>Reno 6</td>
+                        <td>Apex Mobile.inc</td>
+                        <td class="fw-medium text-dark">Oppo</td>
+                        <td>
+                            <span class="plist-color-badge">Red</span>
+                            <span class="plist-color-badge">Blue</span>
+                        </td>
+                        <td>
+                            <div class="plist-action-group">
+                                <button class="plist-act-btn plist-btn-view" title="View"><i class="bi bi-eye"></i></button>
+                                <button class="plist-act-btn plist-btn-edit" title="Edit"><i class="bi bi-pencil-square"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+            </section>
         </main>
     </div>
 
@@ -517,3 +481,4 @@
 </body>
 
 </html>
+

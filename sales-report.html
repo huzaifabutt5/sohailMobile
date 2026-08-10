@@ -18,6 +18,13 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 
+    <style>
+    .plist-data-table thead th {
+        vertical-align: middle;
+        white-space: nowrap;
+    }
+</style>
+
 </head>
 
 <body class="dashboard-page">
@@ -92,8 +99,9 @@
             <li><a href="purchase-report.html"><i class="bi bi-bag"></i>Purchase Report</a></li>
 
             <li><a href="purchase.html"><i class="bi bi-bag-check"></i>Purchase</a></li>
+            <li><a href="purchase-return.html"><i class="bi bi-bag-check"></i>Purchase Return</a></li>
 
-            <li><a href="purchase-return.html"><i class="bi bi-arrow-return-left"></i>Purchase Return</a></li>
+            
 
             <li class="menu-heading">
                 Profit & Loss Management
@@ -225,12 +233,41 @@
             <div class="d-flex justify-content-between align-items-center mb-4">
                 <h3 class="srep-section-title">All Sales</h3>
                 <div class="d-flex align-items-center gap-2">
+                    
                     <button class="srep-btn-return" data-testid="new-return-sale-btn">
                         <i class="bi bi-arrow-return-left"></i> New Return Sale
                     </button>
                     <button class="srep-btn-newsale" data-testid="add-new-sale-btn">
                         <i class="bi bi-plus-lg"></i> Add New Sale
                     </button>
+                   
+                </div>
+            </div>
+
+            <div class="modal fade" id="saleDateFilterModal" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content date-filter-modal">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Select Date</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-6">
+                                    <label class="form-label">From Date</label>
+                                    <input type="date" class="form-control">
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label">To Date</label>
+                                    <input type="date" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-reset" data-bs-dismiss="modal">Reset</button>
+                            <button type="button" class="btn btn-filter">Apply Filter</button>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -250,6 +287,9 @@
                     <div class="srep-search-wrap">
                         <input type="text" class="form-control form-control-sm srep-search-field" placeholder="Customer, Name, Invoice" data-testid="search-input">
                     </div>
+                     <button class="btn btn-primary" id="calendarBtn" data-bs-toggle="modal" data-bs-target="#saleDateFilterModal" aria-label="Filter sales by date">
+                        <i class="bi bi-calendar-event"></i>
+                    </button>
                 </div>
             </div>
 
@@ -258,21 +298,51 @@
                 <table class="table srep-data-table align-middle">
                     <thead>
                         <tr>
-                            <th>Customer ID</th>
-                            <th>Customer Name</th>
-                            <th>Customer Phone</th>
-                            <th>Total Invoices</th>
+                            <th>SL</th>
+                            <th>Date</th>
+                            <th>Invoice ID</th>
+                            <th>Products</th>
+                            <th>Sales Return</th>
+                            <th>Transaction Type</th>
+                            <th>Transaction ID</th>
+                            <th>Payable Amount</th>
+                            <th>Piad Amount</th>
                             <th>Open Balance</th>
+                            <th>Action</th>
+
                         </tr>
                     </thead>
                     <tbody data-testid="sales-report-table-body">
                         <!-- Row 1 -->
                         <tr class="srep-clickable-row" onclick="toggleReportBreakdown(1)" data-testid="sales-row-1">
-                            <td class="fw-medium text-dark">TYR-PN 001</td>
-                            <td>Haroon</td>
-                            <td>+92 312 3456789</td>
-                            <td>185</td>
-                            <td class="fw-semibold text-dark">PKR 1,502,500</td>
+                            <td class="fw-medium text-dark">1</td>
+                            <td>15-June-2026</td>
+                            <td>Invoice-001</td>
+                            <td>N/A</td>
+                            <td class="fw-semibold text-dark">N/A</td>
+                            <td>N/A</td>
+                            <td>N/A</td>
+                            <td>20,000</td>
+                            <td>60,000</td>
+                            <td>80,000</td>
+                             <td> <a href="#" class="action-btn edit-btn" title="Edit"><i class="bi bi-pencil-square"></i></a>
+                                            <a href="#" class="action-btn delete-btn" title="Delete"><i class="bi bi-trash"></i></a>
+                            </td>
+                        </tr>
+                         <tr class="srep-clickable-row" onclick="toggleReportBreakdown(1)" data-testid="sales-row-1">
+                            <td class="fw-medium text-dark">1</td>
+                            <td>15-June-2026</td>
+                            <td>Invoice-001</td>
+                            <td>N/A</td>
+                            <td class="fw-semibold text-dark">N/A</td>
+                            <td>N/A</td>
+                            <td>N/A</td>
+                            <td>20,000</td>
+                            <td>60,000</td>
+                            <td>80,000</td>
+                             <td> <a href="#" class="action-btn edit-btn" title="Edit"><i class="bi bi-pencil-square"></i></a>
+                                            <a href="#" class="action-btn delete-btn" title="Delete"><i class="bi bi-trash"></i></a>
+                            </td>
                         </tr>
                         <tr id="report-breakdown-1" class="d-none">
                             <td colspan="5" class="p-0">
@@ -325,12 +395,20 @@
                         </tr>
 
                         <!-- Row 2 -->
-                        <tr class="srep-clickable-row" onclick="toggleReportBreakdown(2)" data-testid="sales-row-2">
-                            <td class="fw-medium text-dark">TYR-PN 001</td>
-                            <td>Tariq</td>
-                            <td>+92 312 3456789</td>
-                            <td>190</td>
-                            <td class="fw-semibold text-dark">PKR 1,909,000</td>
+                        <tr class="srep-clickable-row" onclick="toggleReportBreakdown(1)" data-testid="sales-row-1">
+                            <td class="fw-medium text-dark">1</td>
+                            <td>15-June-2026</td>
+                            <td>Invoice-001</td>
+                            <td>N/A</td>
+                            <td class="fw-semibold text-dark">N/A</td>
+                            <td>N/A</td>
+                            <td>N/A</td>
+                            <td>20,000</td>
+                            <td>60,000</td>
+                            <td>80,000</td>
+                             <td> <a href="#" class="action-btn edit-btn" title="Edit"><i class="bi bi-pencil-square"></i></a>
+                                            <a href="#" class="action-btn delete-btn" title="Delete"><i class="bi bi-trash"></i></a>
+                            </td>
                         </tr>
                         <tr id="report-breakdown-2" class="d-none">
                             <td colspan="5" class="p-0">
@@ -365,12 +443,20 @@
                         </tr>
 
                         <!-- Row 3 -->
-                        <tr class="srep-clickable-row" onclick="toggleReportBreakdown(3)">
-                            <td class="fw-medium text-dark">TYR-PN 001</td>
-                            <td>Imran</td>
-                            <td>+92 312 3456789</td>
-                            <td>175</td>
-                            <td class="fw-semibold text-dark">PKR 1,579,500</td>
+                        <tr class="srep-clickable-row" onclick="toggleReportBreakdown(1)" data-testid="sales-row-1">
+                            <td class="fw-medium text-dark">1</td>
+                            <td>15-June-2026</td>
+                            <td>Invoice-001</td>
+                            <td>N/A</td>
+                            <td class="fw-semibold text-dark">N/A</td>
+                            <td>N/A</td>
+                            <td>N/A</td>
+                            <td>20,000</td>
+                            <td>60,000</td>
+                            <td>80,000</td>
+                             <td> <a href="#" class="action-btn edit-btn" title="Edit"><i class="bi bi-pencil-square"></i></a>
+                                            <a href="#" class="action-btn delete-btn" title="Delete"><i class="bi bi-trash"></i></a>
+                            </td>
                         </tr>
                         <tr id="report-breakdown-3" class="d-none">
                             <td colspan="5" class="p-0">
@@ -688,27 +774,7 @@
             </div>
 
             <!-- Footer Pagination -->
-            <div class="srep-foot-area">
-                <div>Showing 1 to 10 of 20 entries</div>
-                <nav aria-label="Page navigation">
-                    <ul class="pagination srep-pagination mb-0">
-                        <li class="page-item disabled">
-                            <a class="page-link" href="#" aria-label="Previous">&laquo;</a>
-                        </li>
-                        <li class="page-item disabled">
-                            <a class="page-link" href="#" aria-label="First">&lsaquo;</a>
-                        </li>
-                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Next">&rsaquo;</a>
-                        </li>
-                        <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Last">&raquo;</a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
+           
         </div>
 
     </div>
@@ -718,6 +784,8 @@
 
 </div>
 
+
+
 <!-- Bootstrap Js -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -726,3 +794,4 @@
 </body>
 
 </html>
+

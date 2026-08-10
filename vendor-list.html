@@ -17,7 +17,7 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
-
+  
 </head>
 
 <body class="dashboard-page">
@@ -93,8 +93,9 @@
             <li><a href="purchase-report.html"><i class="bi bi-bag"></i>Purchase Report</a></li>
 
             <li><a href="purchase.html"><i class="bi bi-bag-check"></i>Purchase</a></li>
+            <li><a href="purchase-return.html"><i class="bi bi-bag-check"></i>Purchase Return</a></li>
 
-            <li><a href="purchase-return.html"><i class="bi bi-arrow-return-left"></i>Purchase Return</a></li>
+          
 
             <li class="menu-heading">
                 Profit & Loss Management
@@ -169,11 +170,11 @@
         <main class="main-content">
             <section class="content-area">
                 <div class="view-vendor-header">
-                    <h1>View Vendor</h1>
+                    <h1 class="page-title">View Vendor</h1>
                     <span class="page-badge">Dashboard - Vendor Management</span>
                 </div>
 
-                <div class="vendor-summary-grid">
+                <div class="vendor-summary-grid mt-3">
 
     <div class="vendor-summary-card blue">
         <div class="vendor-summary-content">
@@ -203,7 +204,11 @@
             <h2>$40,000</h2>
 
             <button class="btn btn-primary" id="payBtn">
-                <i class="bi bi-cash-coin me-2"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+  <path d="M18.3332 5.62492H16.0091C15.5082 5.62492 15.2577 5.62492 15.0215 5.5534C14.7853 5.48189 14.5769 5.34296 14.1601 5.06509C13.5349 4.64828 12.8217 4.17279 12.4673 4.06552C12.1131 3.95825 11.7373 3.95825 10.9859 3.95825C9.96409 3.95825 9.30542 3.95825 8.846 4.14855C8.38659 4.33885 8.0253 4.70014 7.30273 5.42272L6.66683 6.05862C6.50399 6.22146 6.42256 6.30289 6.3723 6.38327C6.18596 6.68126 6.20661 7.06413 6.42391 7.34034C6.48254 7.41486 6.57225 7.48705 6.75165 7.63144C7.4148 8.16512 8.37084 8.11185 8.97134 7.50777L9.99984 6.47314H10.8332L15.8332 11.5029C16.2934 11.9659 16.2934 12.7165 15.8332 13.1795C15.3729 13.6425 14.6268 13.6425 14.1665 13.1795L13.7498 12.7603M11.2498 13.5986L12.0832 14.4369C12.5434 14.8999 13.2896 14.8999 13.7498 14.4369C14.2101 13.974 14.2101 13.2233 13.7498 12.7603L11.2498 10.2455M9.58317 11.932L11.2498 13.5986C11.7101 14.0616 11.7101 14.8122 11.2498 15.2752C10.7896 15.7381 10.0434 15.7381 9.58317 15.2752L8.33317 14.0177M1.6665 12.2916H1.93229C2.62324 12.2916 2.96872 12.2916 3.27846 12.4217C3.5882 12.552 3.82996 12.7987 4.31348 13.2923L6.6665 15.6944C7.12675 16.1573 7.87294 16.1573 8.33317 15.6944C8.79342 15.2314 8.79342 14.4807 8.33317 14.0177L7.9165 13.5986" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M18.3333 12.2917H16.25" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M7.08317 5.625H1.6665" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+</svg>
                 Pay to Vendor
             </button>
         </div>
@@ -269,241 +274,390 @@
 
 </div>
 
-                <div class="purchase-report-card">
-                    <div class="report-head">
-                        <h2>Purchase Report</h2>
-                    </div>
+              <div class="plist-main-wrap">
+        <!-- Header -->
+        <div class="plist-head-row">
+            <h2 class="plist-title-main">Sales Report</h2>
+            
+        </div>
 
-                    <div class="report-toolbar">
-                        <div class="entries-box">
-                            <div class="entries-select-wrap">
-                                <select id="entries" class="form-select form-select-sm">
-                                    <option selected>10</option>
-                                    <option>20</option>
-                                    <option>50</option>
-                                </select>
-                            </div>
-                            <span>entries per page</span>
-                        </div>
+        <!-- Toolbar -->
+        <div class="plist-toolbar-area">
+            <div class="d-flex align-items-center text-secondary" style="font-size: 14px;">
+                <span>Show</span>
+                <select class="form-select form-select-sm plist-select-entries" data-testid="entries-select">
+                    <option value="10" selected>10</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                </select>
+                <span>entries per page</span>
+            </div>
+            <div class="search-box-inline">
+                        <label for="searchVendor">Search:</label>
+                        <input id="searchVendor" type="text" placeholder="Search Category">
+                         <div class="mb-3">
+             
+                <select class="form-select mt-3">
+                    <option selected disabled>-- Select Option --</option>
+                    <option>Cash</option>
+                    <option>Bank Transfer</option>
+                    <option>JazzCash</option>
+                </select>
+            </div>
+                        <button class="btn btn-primary" id="calendarBtn">
+    <i class="bi bi-calendar-event"></i>
+</button>
+    <div class="modal fade" id="dateFilterModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content date-filter-modal">
 
-                        <div class="report-search-area">
-                            <label for="searchProduct">Search:</label>
-                            <input id="searchProduct" type="text" placeholder="Search Product">
-                        </div>
-                    </div>
+            <div class="modal-header">
+                <h5 class="modal-title">Pay Amount</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
 
-<div class="table-wrap table-responsive">
-                        <table class="table purchase-table align-middle mb-0">
-                            <thead>
-                                <tr>
-                                    <th>SL</th>
-                                    <th>Date</th>
-                                    <th>Invoice ID</th>
-                                    <th>Products</th>
-                                    <th>Purchase/Return</th>
-                                    <th>Transaction Type</th>
-                                    <th>Transaction ID</th>
-                                    <th>Payable Amount</th>
-                                    <th>Paid Amount</th>
-                                    <th>Open Balance</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>June 15,2026</td>
-                                    <td>N/A</td>
-                                    <td>N/A</td>
-                                    <td>N/A</td>
-                                    <td>Bank Transfer</td>
-                                    <td>Trx 6tbgGY7189</td>
-                                    <td>$40,000</td>
-                                    <td>$10,000</td>
-                                    <td>$30,000</td>
-                                    <td>
-                                        <div class="action-group">
-                                            <button type="button" class="action-btn print-btn" aria-label="Print"><i class="bi bi-printer"></i></button>
-                                            <button type="button" class="action-btn view-btn" aria-label="View"><i class="bi bi-eye"></i></button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>June 15,2026</td>
-                                    <td>Invoice - 0001</td>
-                                    <td>5 Products</td>
-                                    <td><span class="pill-tag">Purchase</span></td>
-                                    <td>Cash</td>
-                                    <td>N/A</td>
-                                    <td>$40,000</td>
-                                    <td>$10,000</td>
-                                    <td>$30,000</td>
-                                    <td>
-                                        <div class="action-group">
-                                            <button type="button" class="action-btn print-btn" aria-label="Print"><i class="bi bi-printer"></i></button>
-                                            <button type="button" class="action-btn view-btn" aria-label="View"><i class="bi bi-eye"></i></button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>June 15,2026</td>
-                                    <td>Invoice -0002</td>
-                                    <td>7 Products</td>
-                                    <td><span class="pill-tag">Purchase</span></td>
-                                    <td>Cash</td>
-                                    <td>N/A</td>
-                                    <td>$40,000</td>
-                                    <td>$10,000</td>
-                                    <td>$30,000</td>
-                                    <td>
-                                        <div class="action-group">
-                                            <button type="button" class="action-btn print-btn" aria-label="Print"><i class="bi bi-printer"></i></button>
-                                            <button type="button" class="action-btn view-btn" aria-label="View"><i class="bi bi-eye"></i></button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td>June 15,2026</td>
-                                    <td>Invoice -0003</td>
-                                    <td>10 Products</td>
-                                    <td><span class="pill-tag">Purchase</span></td>
-                                    <td>Cash</td>
-                                    <td>N/A</td>
-                                    <td>$40,000</td>
-                                    <td>$10,000</td>
-                                    <td>$30,000</td>
-                                    <td>
-                                        <div class="action-group">
-                                            <button type="button" class="action-btn print-btn" aria-label="Print"><i class="bi bi-printer"></i></button>
-                                            <button type="button" class="action-btn view-btn" aria-label="View"><i class="bi bi-eye"></i></button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>5</td>
-                                    <td>June 15,2026</td>
-                                    <td>Invoice -0004</td>
-                                    <td>15 Products</td>
-                                    <td><span class="pill-tag">Purchase</span></td>
-                                    <td>Cash</td>
-                                    <td>N/A</td>
-                                    <td>$40,000</td>
-                                    <td>$10,000</td>
-                                    <td>$30,000</td>
-                                    <td>
-                                        <div class="action-group">
-                                            <button type="button" class="action-btn print-btn" aria-label="Print"><i class="bi bi-printer"></i></button>
-                                            <button type="button" class="action-btn view-btn" aria-label="View"><i class="bi bi-eye"></i></button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>6</td>
-                                    <td>June 15,2026</td>
-                                    <td>Invoice -0005</td>
-                                    <td>20 Products</td>
-                                    <td><span class="pill-tag">Purchase</span></td>
-                                    <td>Cash</td>
-                                    <td>N/A</td>
-                                    <td>$40,000</td>
-                                    <td>$10,000</td>
-                                    <td>$30,000</td>
-                                    <td>
-                                        <div class="action-group">
-                                            <button type="button" class="action-btn print-btn" aria-label="Print"><i class="bi bi-printer"></i></button>
-                                            <button type="button" class="action-btn view-btn" aria-label="View"><i class="bi bi-eye"></i></button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>7</td>
-                                    <td>June 15,2026</td>
-                                    <td>Invoice -0006</td>
-                                    <td>25 Products</td>
-                                    <td><span class="pill-tag">Purchase</span></td>
-                                    <td>Cash</td>
-                                    <td>N/A</td>
-                                    <td>$40,000</td>
-                                    <td>$10,000</td>
-                                    <td>$30,000</td>
-                                    <td>
-                                        <div class="action-group">
-                                            <button type="button" class="action-btn print-btn" aria-label="Print"><i class="bi bi-printer"></i></button>
-                                            <button type="button" class="action-btn view-btn" aria-label="View"><i class="bi bi-eye"></i></button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>8</td>
-                                    <td>June 15,2026</td>
-                                    <td>Invoice -0007</td>
-                                    <td>30 Products</td>
-                                    <td><span class="pill-tag">Purchase</span></td>
-                                    <td>Cash</td>
-                                    <td>N/A</td>
-                                    <td>$40,000</td>
-                                    <td>$10,000</td>
-                                    <td>$30,000</td>
-                                    <td>
-                                        <div class="action-group">
-                                            <button type="button" class="action-btn print-btn" aria-label="Print"><i class="bi bi-printer"></i></button>
-                                            <button type="button" class="action-btn view-btn" aria-label="View"><i class="bi bi-eye"></i></button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>9</td>
-                                    <td>June 15,2026</td>
-                                    <td>Invoice -0008</td>
-                                    <td>50 Products</td>
-                                    <td><span class="pill-tag">Purchase</span></td>
-                                    <td>Cash</td>
-                                    <td>N/A</td>
-                                    <td>$40,000</td>
-                                    <td>$10,000</td>
-                                    <td>$30,000</td>
-                                    <td>
-                                        <div class="action-group">
-                                            <button type="button" class="action-btn print-btn" aria-label="Print"><i class="bi bi-printer"></i></button>
-                                            <button type="button" class="action-btn view-btn" aria-label="View"><i class="bi bi-eye"></i></button>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>10</td>
-                                    <td>June 15,2026</td>
-                                    <td>Invoice -0001</td>
-                                    <td>100 Products</td>
-                                    <td><span class="pill-tag">Purchase</span></td>
-                                    <td>Cash</td>
-                                    <td>N/A</td>
-                                    <td>$40,000</td>
-                                    <td>$10,000</td>
-                                    <td>$30,000</td>
-                                    <td>
-                                        <div class="action-group">
-                                            <button type="button" class="action-btn print-btn" aria-label="Print"><i class="bi bi-printer"></i></button>
-                                            <button type="button" class="action-btn view-btn" aria-label="View"><i class="bi bi-eye"></i></button>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+            <div class="modal-body">
 
-                    <div class="purchase-pagination">
-                        <span>Showing 1 to 10 of 20 entries</span>
-                        <div class="page-buttons">
-                            <button type="button" class="page-arrow"><i class="bi bi-chevron-left"></i></button>
-                            <button type="button" class="page-num active">1</button>
-                            <button type="button" class="page-num">2</button>
-                            <button type="button" class="page-arrow"><i class="bi bi-chevron-right"></i></button>
-                        </div>
-                    </div>
+                  <!-- Payable Amount -->
+                <div class="pay-field">
+                    <label for="payableAmount">Payable Amount</label>
+                    <input 
+                        type="text" 
+                        id="payableAmount"
+                        class="form-control payable-input"
+                        value="Rs. 20,000"
+                        readonly
+                    >
                 </div>
+
+                <!-- Paid Amount -->
+                <div class="pay-field">
+                    <label for="paidAmount">Paid Amount</label>
+                    <input 
+                        type="number"
+                        id="paidAmount"
+                        class="form-control"
+                        placeholder="Enter Amount to Pay"
+                    >
+                </div>
+
+                <!-- Payment Type -->
+                <div class="pay-field">
+                    <label for="paymentType">Payment Type</label>
+                    <select 
+                        id="paymentType"
+                        class="form-select"
+                    >
+                        <option selected disabled>-- Select Option --</option>
+                        <option value="cash">Cash</option>
+                        <option value="bank_transfer">Bank Transfer</option>
+                        <option value="online">Online Payment</option>
+                        <option value="cheque">Cheque</option>
+                    </select>
+                </div>
+
+                <!-- Transaction ID -->
+                <div class="pay-field">
+                    <label for="transactionId">Transaction ID</label>
+                    <input 
+                        type="text"
+                        id="transactionId"
+                        class="form-control"
+                        placeholder="Transaction ID"
+                    >
+                </div>
+
+                <!-- Buttons -->
+                <div class="pay-modal-buttons">
+                    <button 
+                        type="button" 
+                        class="pay-cancel-btn"
+                        data-bs-dismiss="modal"
+                    >
+                        Cancel
+                    </button>
+
+                    <button 
+                        type="button" 
+                        class="pay-submit-btn"
+                    >
+                        Pay to Vendor
+                    </button>
+                </div>
+
+            </div>
+
+         
+        </div>
+    </div>
+</div>
+                    </div>
+        </div>
+
+        <!-- Table -->
+        <div class="table-responsive">
+            <table class="table plist-data-table align-middle">
+                <thead>
+                    <tr>
+                        <th style="width: 60px;">SL</th>
+                        <th>Date</th>
+                        <th>Invoice ID</th>
+                        <th>Products</th>
+                        <th>Purchase/Return</th>
+                        <th>Transaction Type</th>
+                        <th>Transaction ID</th>
+                        <th>Payable Amount</th>
+                        <th>Paid Amount</th>
+                        <th>Open Balance</th>
+                        <th style="width: 120px;">Actions</th>
+                    </tr>
+                </thead>
+                <tbody data-testid="products-listing-table-body">
+                    <tr>
+                        <td>1</td>
+                        <td>15-June-2026</td>
+                        <td>invoice-001</td>
+                        <td>3 Products</td>
+                        <td>Sale</td>
+                        <td class="fw-medium text-dark">Cash</td>
+                        <td>N/A</td>
+                        <td>50,000</td>
+                        <td>20,000</td>
+                        <td>70,000</td>
+                        <td>
+                            <div class="plist-action-group">
+                                <button class="plist-act-btn plist-btn-view" title="View"><i class="bi bi-eye"></i></button>
+                                <button class="plist-act-btn plist-btn-edit" title="Edit"><i class="bi bi-pencil-square"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>15-June-2026</td>
+                        <td>invoice-001</td>
+                        <td>3 Products</td>
+                        <td>Sale</td>
+                        <td class="fw-medium text-dark">Cash</td>
+                        <td>N/A</td>
+                        <td>50,000</td>
+                        <td>20,000</td>
+                        <td>70,000</td>
+                        <td>
+                            <div class="plist-action-group">
+                                <button class="plist-act-btn plist-btn-view" title="View"><i class="bi bi-eye"></i></button>
+                                <button class="plist-act-btn plist-btn-edit" title="Edit"><i class="bi bi-pencil-square"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>15-June-2026</td>
+                        <td>invoice-001</td>
+                        <td>3 Products</td>
+                        <td>Sale</td>
+                        <td class="fw-medium text-dark">Cash</td>
+                        <td>N/A</td>
+                        <td>50,000</td>
+                        <td>20,000</td>
+                        <td>70,000</td>
+                        <td>
+                            <div class="plist-action-group">
+                                <button class="plist-act-btn plist-btn-view" title="View"><i class="bi bi-eye"></i></button>
+                                <button class="plist-act-btn plist-btn-edit" title="Edit"><i class="bi bi-pencil-square"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>15-June-2026</td>
+                        <td>invoice-001</td>
+                        <td>3 Products</td>
+                        <td>Sale</td>
+                        <td class="fw-medium text-dark">Cash</td>
+                        <td>N/A</td>
+                        <td>50,000</td>
+                        <td>20,000</td>
+                        <td>70,000</td>
+                        <td>
+                            <div class="plist-action-group">
+                                <button class="plist-act-btn plist-btn-view" title="View"><i class="bi bi-eye"></i></button>
+                                <button class="plist-act-btn plist-btn-edit" title="Edit"><i class="bi bi-pencil-square"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>15-June-2026</td>
+                        <td>invoice-001</td>
+                        <td>3 Products</td>
+                        <td>Sale</td>
+                        <td class="fw-medium text-dark">Cash</td>
+                        <td>N/A</td>
+                        <td>50,000</td>
+                        <td>20,000</td>
+                        <td>70,000</td>
+                        <td>
+                            <div class="plist-action-group">
+                                <button class="plist-act-btn plist-btn-view" title="View"><i class="bi bi-eye"></i></button>
+                                <button class="plist-act-btn plist-btn-edit" title="Edit"><i class="bi bi-pencil-square"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>15-June-2026</td>
+                        <td>invoice-001</td>
+                        <td>3 Products</td>
+                        <td>Sale</td>
+                        <td class="fw-medium text-dark">Cash</td>
+                        <td>N/A</td>
+                        <td>50,000</td>
+                        <td>20,000</td>
+                        <td>70,000</td>
+                        <td>
+                            <div class="plist-action-group">
+                                <button class="plist-act-btn plist-btn-view" title="View"><i class="bi bi-eye"></i></button>
+                                <button class="plist-act-btn plist-btn-edit" title="Edit"><i class="bi bi-pencil-square"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>15-June-2026</td>
+                        <td>invoice-001</td>
+                        <td>3 Products</td>
+                        <td>Sale</td>
+                        <td class="fw-medium text-dark">Cash</td>
+                        <td>N/A</td>
+                        <td>50,000</td>
+                        <td>20,000</td>
+                        <td>70,000</td>
+                        <td>
+                            <div class="plist-action-group">
+                                <button class="plist-act-btn plist-btn-view" title="View"><i class="bi bi-eye"></i></button>
+                                <button class="plist-act-btn plist-btn-edit" title="Edit"><i class="bi bi-pencil-square"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>15-June-2026</td>
+                        <td>invoice-001</td>
+                        <td>3 Products</td>
+                        <td>Sale</td>
+                        <td class="fw-medium text-dark">Cash</td>
+                        <td>N/A</td>
+                        <td>50,000</td>
+                        <td>20,000</td>
+                        <td>70,000</td>
+                        <td>
+                            <div class="plist-action-group">
+                                <button class="plist-act-btn plist-btn-view" title="View"><i class="bi bi-eye"></i></button>
+                                <button class="plist-act-btn plist-btn-edit" title="Edit"><i class="bi bi-pencil-square"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>15-June-2026</td>
+                        <td>invoice-001</td>
+                        <td>3 Products</td>
+                        <td>Sale</td>
+                        <td class="fw-medium text-dark">Cash</td>
+                        <td>N/A</td>
+                        <td>50,000</td>
+                        <td>20,000</td>
+                        <td>70,000</td>
+                        <td>
+                            <div class="plist-action-group">
+                                <button class="plist-act-btn plist-btn-view" title="View"><i class="bi bi-eye"></i></button>
+                                <button class="plist-act-btn plist-btn-edit" title="Edit"><i class="bi bi-pencil-square"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>15-June-2026</td>
+                        <td>invoice-001</td>
+                        <td>3 Products</td>
+                        <td>Sale</td>
+                        <td class="fw-medium text-dark">Cash</td>
+                        <td>N/A</td>
+                        <td>50,000</td>
+                        <td>20,000</td>
+                        <td>70,000</td>
+                        <td>
+                            <div class="plist-action-group">
+                                <button class="plist-act-btn plist-btn-view" title="View"><i class="bi bi-eye"></i></button>
+                                <button class="plist-act-btn plist-btn-edit" title="Edit"><i class="bi bi-pencil-square"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>15-June-2026</td>
+                        <td>invoice-001</td>
+                        <td>3 Products</td>
+                        <td>Sale</td>
+                        <td class="fw-medium text-dark">Cash</td>
+                        <td>N/A</td>
+                        <td>50,000</td>
+                        <td>20,000</td>
+                        <td>70,000</td>
+                        <td>
+                            <div class="plist-action-group">
+                                <button class="plist-act-btn plist-btn-view" title="View"><i class="bi bi-eye"></i></button>
+                                <button class="plist-act-btn plist-btn-edit" title="Edit"><i class="bi bi-pencil-square"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>15-June-2026</td>
+                        <td>invoice-001</td>
+                        <td>3 Products</td>
+                        <td>Sale</td>
+                        <td class="fw-medium text-dark">Cash</td>
+                        <td>N/A</td>
+                        <td>50,000</td>
+                        <td>20,000</td>
+                        <td>70,000</td>
+                        <td>
+                            <div class="plist-action-group">
+                                <button class="plist-act-btn plist-btn-view" title="View"><i class="bi bi-eye"></i></button>
+                                <button class="plist-act-btn plist-btn-edit" title="Edit"><i class="bi bi-pencil-square"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+        
+                   
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Footer Pagination -->
+        <div class="plist-foot-area">
+            <div>Showing 1 to 10 of 20 entries</div>
+            <nav aria-label="Page navigation">
+                <ul class="pagination plist-pagination mb-0">
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" aria-label="Previous">&laquo;</a>
+                    </li>
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" aria-label="First">&lsaquo;</a>
+                    </li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">&rsaquo;</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Last">&raquo;</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
             </section>
         </main>
     </div>
@@ -512,6 +666,13 @@
 
 <!-- Bootstrap Js -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<style>
+    .plist-data-table thead th {
+        vertical-align: middle;
+        white-space: nowrap;
+    }
+</style>
 
 <script src="js/script.js"></script>
 

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Manage-Expense</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body class="dashboard-page">
+
+<div class="dashboard-wrapper">
+    <!-- ================= Desktop Sidebar ================= -->
+
+    <aside class="sidebar">
+
+        <!-- Logo -->
+        <div class="sidebar-logo">
+
+            <img src="img/logo.png" alt="Logo">
+
+            <h4>Sohail Mobile</h4>
+
+        </div>
+
+        <!-- Sidebar Menu -->
+
+<ul class="sidebar-menu">
+
+            <li>
+                <a href="dashboard.html">
+                    <i class="bi bi-house-door"></i>
+                    Dashboard
+                </a>
+            </li>
+
+            <li class="menu-heading">Vendor Management</li>
+
+            <li>
+                <a href="manage-vendor.html">
+                    <i class="bi bi-person"></i>
+                    Manage Vendor
+                </a>
+            </li>
+
+            <li class="menu-heading">
+                Customer Relationship Management
+            </li>
+
+            <li>
+                <a href="manage-customer.html">
+                    <i class="bi bi-person"></i>
+                    Manage Customer
+                </a>
+            </li>
+
+            <li class="menu-heading">
+                Inventory Management
+            </li>
+
+<li class="active"><a href="category-listing.html"><i class="bi bi-box"></i>Category Listing</a></li>
+
+            <li><a href="brand-model.html"><i class="bi bi-phone"></i>Brand & Model</a></li>
+
+            <li><a href="listing-product.html"><i class="bi bi-list"></i>Listing Product</a></li>
+
+            <li><a href="stock-listing.html"><i class="bi bi-archive"></i>Stock Listing</a></li>
+
+            <li class="menu-heading">
+                Sales & Purchase
+            </li>
+
+            <li><a href="sales-report.html"><i class="bi bi-cart"></i>Sales Report</a></li>
+
+            <li><a href="sales.html"><i class="bi bi-cart-check"></i>Sales</a></li>
+
+            <li><a href="sales-return.html"><i class="bi bi-arrow-return-left"></i>Sales Return</a></li>
+
+            <li><a href="purchase-report.html"><i class="bi bi-bag"></i>Purchase Report</a></li>
+
+            <li><a href="purchase.html"><i class="bi bi-bag-check"></i>Purchase</a></li>
+            <li><a href="purchase-return.html"><i class="bi bi-bag-check"></i>Purchase Return</a></li>
+
+           
+
+            <li class="menu-heading">
+                Profit & Loss Management
+            </li>
+
+            <li><a href="open-balance-sheet.html"><i class="bi bi-graph-up"></i>Open Balance Sheet</a></li>
+
+            <li><a href="pnl-report.html"><i class="bi bi-bar-chart"></i>PnL Report</a></li>
+
+            <li class="menu-heading">
+                Expenses Management
+            </li>
+
+            <li><a href="manage-expense.html"><i class="bi bi-wallet2"></i>Manage Expense</a></li>
+
+            <li class="menu-heading">
+                Role Management
+            </li>
+
+            <li><a href="manage-roles.html"><i class="bi bi-person-gear"></i>Manage Roles</a></li>
+
+        </ul>
+
+        <!-- Bottom Buttons -->
+
+        <div class="sidebar-footer">
+            <a href="account-setting.html" class="account-btn">
+
+                <i class="bi bi-gear"></i>
+
+                Account Setting
+
+            </a>
+
+            <button class="logout-btn">
+
+                <i class="bi bi-box-arrow-right"></i>
+
+                Logout
+
+            </button>
+
+        </div>
+
+    </aside>
+
+    <div class="main-area">
+        <header class="top-navbar">
+            <div class="navbar-left">
+                <button id="sidebarToggle" class="toggle-btn" type="button" aria-label="Toggle Sidebar">
+                    <i class="bi bi-list"></i>
+                </button>
+
+                <div class="search-box">
+                    <i class="bi bi-search"></i>
+                    <input type="text" placeholder="Search">
+                </div>
+            </div>
+
+            <div class="navbar-right">
+                <button class="bell-btn">
+                    <i class="bi bi-bell"></i>
+                </button>
+                <img src="img/profile.png" class="profile-img" alt="">
+            </div>
+        </header>
+
+
+
+
+ <!-- Main Content Section -->       
+        <main class="main-content">
+            <!-- Main content removed per request -->
+            <section class="content-area">
+                 <div class="d-flex justify-content-between align-items-center plist-top-nav">
+        <span class="page-title">Manage Expense</span>
+        <span class="text-muted" style="font-size: 13px;">Dashboard - Expenses Management</span>
+    </div>
+
+    <!-- Main Content Card -->
+    <div class="plist-main-wrap">
+        <!-- Header -->
+        <div class="plist-head-row">
+            <h2 class="plist-title-main">All Expense</h2>
+            <a href="add-new-expense.html"><button class="btn btn-primary" id="payBtn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+  <path d="M18.3333 5.62565H16.0092C15.5083 5.62565 15.2578 5.62565 15.0216 5.55413C14.7855 5.48263 14.577 5.34369 14.1602 5.06582C13.535 4.64901 12.8218 4.17353 12.4675 4.06625C12.1132 3.95898 11.7375 3.95898 10.986 3.95898C9.96421 3.95898 9.30554 3.95898 8.84613 4.14928C8.38671 4.33958 8.02543 4.70088 7.30285 5.42345L6.66695 6.05935C6.50411 6.22219 6.42268 6.30362 6.37242 6.384C6.18608 6.68199 6.20673 7.06486 6.42403 7.34108C6.48266 7.41559 6.57237 7.48778 6.75178 7.63217C7.41493 8.16585 8.37096 8.11258 8.97146 7.5085L9.99996 6.47387H10.8333L15.8333 11.5036C16.2935 11.9666 16.2935 12.7172 15.8333 13.1802C15.373 13.6432 14.6269 13.6432 14.1666 13.1802L13.75 12.761M11.25 13.5994L12.0833 14.4376C12.5435 14.9006 13.2897 14.9006 13.75 14.4376C14.2102 13.9747 14.2102 13.224 13.75 12.761L11.25 10.2462M9.58329 11.9327L11.25 13.5994C11.7102 14.0623 11.7102 14.813 11.25 15.276C10.7897 15.7389 10.0435 15.7389 9.58329 15.276L8.33329 14.0185M1.66663 12.2923H1.93241C2.62336 12.2923 2.96884 12.2923 3.27858 12.4225C3.58833 12.5527 3.83008 12.7995 4.3136 13.293L6.66663 15.6951C7.12687 16.158 7.87306 16.158 8.33329 15.6951C8.79354 15.2321 8.79354 14.4815 8.33329 14.0185L7.91663 13.5994" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M18.3333 12.291H16.25" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+  <path d="M7.08329 5.625H1.66663" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+</svg>
+                Add New Expense
+            </button>
+            </a>
+        </div>
+
+        
+
+        <!-- Toolbar -->
+        <div class="plist-toolbar-area">
+            <div class="d-flex align-items-center text-secondary" style="font-size: 14px;">
+                <span>Show</span>
+                <select class="form-select form-select-sm plist-select-entries" data-testid="entries-select">
+                    <option value="10" selected>10</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                </select>
+                <span>entries per page</span>
+            </div>
+            <div class="search-box-inline">
+                        <label for="searchVendor">Search:</label>
+                        <input id="searchVendor" type="text" placeholder="Search Category">
+                        <button class="btn btn-primary" id="calendarBtn">
+    <i class="bi bi-calendar-event"></i>
+</button>
+    <div class="modal fade" id="dateFilterModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content date-filter-modal">
+
+            <div class="modal-header">
+                <h5 class="modal-title">Select Date</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+
+                <div class="row">
+                    <div class="col-6">
+                        <label>From Date</label>
+                        <input type="date" class="form-control">
+                    </div>
+
+                    <div class="col-6">
+                        <label>To Date</label>
+                        <input type="date" class="form-control">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+
+                <button type="button" class="btn btn-reset" data-bs-dismiss="modal">
+                    Reset
+                </button>
+
+                <button type="button" class="btn btn-filter">
+                    Apply Filter
+                </button>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+                    </div>
+        </div>
+
+        <!-- Table -->
+        <div class="table-responsive">
+            <table class="table plist-data-table align-middle">
+                <thead>
+                    <tr>
+                        <th style="width: 60px;">SL</th>
+                        <th>Date</th>
+                        <th>Expense Name</th>
+                        <th>Description</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>June 15, 2026</td>
+                        <td>Shop Rent</td>
+                        <td>195/65 R 15</td>
+                        <td>PKR 15,000</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>June 15, 2026</td>
+                        <td>Shop Rent</td>
+                        <td>185/70 R 14</td>
+                        <td>PKR 15,000</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>June 15, 2026</td>
+                        <td>Shop Rent</td>
+                        <td>205/55 R 16</td>
+                        <td>PKR 15,000</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>June 15, 2026</td>
+                        <td>Shop Rent</td>
+                        <td>195/50 R 15</td>
+                        <td>PKR 15,000</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>June 15, 2026</td>
+                        <td>Shop Rent</td>
+                        <td>215/60 R 16</td>
+                        <td>PKR 15,000</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>June 15, 2026</td>
+                        <td>Shop Rent</td>
+                        <td>185/65 R 15</td>
+                        <td>PKR 15,000</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>June 15, 2026</td>
+                        <td>Shop Rent</td>
+                        <td>175/70 R 13</td>
+                        <td>PKR 15,000</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>June 15, 2026</td>
+                        <td>Shop Rent</td>
+                        <td>205/65 R 15</td>
+                        <td>PKR 15,000</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>June 15, 2026</td>
+                        <td>Shop Rent</td>
+                        <td>195/60 R 15</td>
+                        <td>PKR 15,000</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>June 15, 2026</td>
+                        <td>Shop Rent</td>
+                        <td>225/45 R 17</td>
+                        <td>PKR 15,000</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>June 15, 2026</td>
+                        <td>Shop Rent</td>
+                        <td>225/45 R 17</td>
+                        <td>PKR 15,000</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>June 15, 2026</td>
+                        <td>Shop Rent</td>
+                        <td>225/45 R 17</td>
+                        <td>PKR 15,000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+            </section>
+        </main>
+    </div>
+
+</div>
+
+<!-- Bootstrap Js -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="js/script.js"></script>
+
+</body>
+
+</html>
+

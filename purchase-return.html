@@ -92,9 +92,9 @@
             <li><a href="purchase-report.html"><i class="bi bi-bag"></i>Purchase Report</a></li>
 
             <li><a href="purchase.html"><i class="bi bi-bag-check"></i>Purchase</a></li>
+        <li><a href="purchase-return.html"><i class="bi bi-bag-check"></i>Purchase Return</a></li>
 
-            <li><a href="purchase-return.html"><i class="bi bi-arrow-return-left"></i>Purchase Return</a></li>
-
+           
             <li class="menu-heading">
                 Profit & Loss Management
             </li>
@@ -168,38 +168,37 @@
         <main class="main-content">
             <!-- Main content removed per request -->
             <section class="content-area">
-                 <!-- Main Content Wrapper to be placed inside your dashboard container -->
-    <div class="purchase-return-content">
-        
-        <!-- Header -->
-        <div class="purchase-return-header">
-            <h4>Purchase Return</h4>
-            <span>Dashboard - Inventory Management</span>
-        </div>
+                <div class="d-flex justify-content-between align-items-center sret-top-nav">
+        <span class="fw-semibold text-secondary" style="font-size: 16px; color: #1e293b !important;">Sale Return</span>
+        <span class="text-muted" style="font-size: 13px;">Dashboard - Inventory Management</span>
+    </div>
 
-        <!-- Purchase Details Card -->
-        <div class="purchase-return-card">
-            <div class="purchase-return-section-title">Purchase Details</div>
+    <!-- Main Container -->
+    <div class="sret-main-container">
+        
+        <!-- 1. Sale Details -->
+        <div class="sret-card-box">
+            <h3 class="sret-section-title">Sale Details</h3>
             
-            <!-- Invoice ID input -->
             <div class="mb-3">
-                <label class="purchase-return-label">Invoice ID <span class="text-danger">*</span></label>
-                <input type="text" class="form-control purchase-return-input" placeholder="Enter Invoice ID">
+                <label class="sret-field-label">Invoice ID *</label>
+                <input type="text" class="form-control sret-input-field" placeholder="Enter Invoice ID" data-testid="invoice-id-input">
             </div>
 
-            <!-- Table Responsive -->
+            <!-- Table -->
             <div class="table-responsive">
-                <table class="table purchase-return-table">
+                <table class="table sret-data-table align-middle">
                     <thead>
                         <tr>
-                            <th>SL</th>
+                            <th style="width: 50px;">SL</th>
                             <th>Product Category</th>
                             <th>Brand</th>
                             <th>Model</th>
                             <th>Company</th>
                             <th>Product Name</th>
                             <th>Quantity</th>
-                            <th>Unit price</th>
+                            <th>Unit Price</th>
+                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -210,66 +209,72 @@
                             <td>S24</td>
                             <td>Apex Mobile.inc</td>
                             <td>Samsung S24 Ultra</td>
-                            <td>100 <span class="purchase-return-badge">-20</span></td>
-                            <td>PKR 150,000</td>
+                            <td>100 <span class="text-danger">-20</span></td>
+                            <td>5000</td>
+                            <td> <a href="#" class="action-btn edit-btn" title="Edit"><i class="bi bi-pencil-square"></i></a>
+                                            <a href="#" class="action-btn delete-btn" title="Delete"><i class="bi bi-trash"></i></a>
+                            </td>
+                                
                         </tr>
                     </tbody>
                 </table>
             </div>
 
-            <!-- Form Fields Grid -->
+            <!-- Form Inputs -->
             <div class="row g-3">
                 <div class="col-md-6">
-                    <label class="purchase-return-label">Category</label>
-                    <input type="text" class="form-control purchase-return-input" value="LCD Panel" readonly>
+                    <label class="sret-field-label">Category</label>
+                    <input type="text" class="form-control sret-input-field bg-light" value="LCD Panel" readonly data-testid="return-category-input">
                 </div>
                 <div class="col-md-6">
-                    <label class="purchase-return-label">Brand</label>
-                    <input type="text" class="form-control purchase-return-input" value="Samsung" readonly>
+                    <label class="sret-field-label">Brand</label>
+                    <input type="text" class="form-control sret-input-field bg-light" value="Samsung" readonly data-testid="return-brand-input">
                 </div>
                 <div class="col-md-6">
-                    <label class="purchase-return-label">Model</label>
-                    <input type="text" class="form-control purchase-return-input" value="S24" readonly>
+                    <label class="sret-field-label">Model</label>
+                    <input type="text" class="form-control sret-input-field bg-light" value="S24" readonly data-testid="return-model-input">
                 </div>
                 <div class="col-md-6">
-                    <label class="purchase-return-label">Company</label>
-                    <input type="text" class="form-control purchase-return-input" value="Apex Mobile.inc" readonly>
+                    <label class="sret-field-label">Company</label>
+                    <input type="text" class="form-control sret-input-field bg-light" value="Apex Mobile.inc" readonly data-testid="return-company-input">
                 </div>
                 <div class="col-12">
-                    <label class="purchase-return-label">Product</label>
-                    <input type="text" class="form-control purchase-return-input" value="Samsung S24" readonly>
+                    <label class="sret-field-label">Product</label>
+                    <input type="text" class="form-control sret-input-field bg-light" value="Samsung S24" readonly data-testid="return-product-input">
                 </div>
                 <div class="col-md-6">
-                    <label class="purchase-return-label">Color</label>
-                    <input type="text" class="form-control purchase-return-input" value="Black" readonly>
+                    <label class="sret-field-label">Color</label>
+                    <input type="text" class="form-control sret-input-field bg-light" value="Black" readonly data-testid="return-color-input">
                 </div>
                 <div class="col-md-6">
-                    <label class="purchase-return-label">Quantity</label>
-                    <input type="text" class="form-control purchase-return-input" value="100" readonly>
+                    <label class="sret-field-label">Quantity</label>
+                    <input type="number" class="form-control sret-input-field bg-light" value="100" readonly data-testid="return-quantity-input">
                 </div>
                 <div class="col-12">
-                    <label class="purchase-return-label">Return Quantity</label>
-                    <input type="text" class="form-control purchase-return-input" placeholder="Return Quantity">
+                    <label class="sret-field-label">Return Quantity</label>
+                    <input type="text" class="form-control sret-input-field" placeholder="Return Quantity" data-testid="return-quantity-input-field">
                 </div>
             </div>
 
-            <div class="d-flex justify-content-end mt-4">
-                <button class="btn purchase-return-btn-primary">Update</button>
+            <div class="d-flex justify-content-end mt-3">
+                <button class="sret-btn-primary" data-testid="update-return-btn">Update</button>
             </div>
         </div>
 
-        <!-- Payment Information Card -->
-        <div class="purchase-return-card">
-            <div class="purchase-return-section-title">Payment Information</div>
-            
-            <div class="mb-3">
-                <label class="purchase-return-label">Net Total (Returned Products)</label>
-                <input type="text" class="form-control purchase-return-input" placeholder="Net Total" readonly>
+        <!-- 2. Payment Information -->
+        <div class="sret-card-box mb-0">
+            <h3 class="sret-section-title">Payment Information</h3>
+            <div class="row">
+                <div class="col-12">
+                    <label class="sret-field-label">Net Total (Returned Products)</label>
+                    <input type="text" class="form-control sret-input-field" value="Net Total" data-testid="net-total-returned-input">
+                </div>
             </div>
 
-            <div class="d-flex justify-content-end gap-2 mt-4">
-                <button class="btn purchase-return-btn-secondary">Cancel</button>
-                <button class="btn purchase-return-btn-primary">Return</button>
+            <!-- Footer Action Buttons -->
+            <div class="sret-foot-actions">
+                <button type="button" class="sret-btn-cancel" data-testid="cancel-return-btn">Cancel</button>
+                <button type="button" class="sret-btn-primary" data-testid="return-btn">Return</button>
             </div>
         </div>
 
@@ -288,3 +293,4 @@
 </body>
 
 </html>
+

@@ -45,8 +45,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const categoryPages = ['category-listing.html', 'add-new-category.html'];
 const productPages = ['listing-product.html', 'add-new-product.html', 'add-product-view.html'];
     const stockPages = ['stock-listing.html', 'stock-listing-panels.html'];
-    const pnlReportPages = ['pnl-report.html', 'pnl-report-select.html'];
-    const rolePages = ['manage-roles.html', 'add-new-role.html'];
 
     sidebarLinks.forEach(link => {
         const listItem = link.closest('li');
@@ -56,10 +54,8 @@ const productPages = ['listing-product.html', 'add-new-product.html', 'add-produ
         const isCategoryPageActive = categoryPages.includes(currentPage) && linkPage === 'category-listing.html';
         const isProductPageActive = productPages.includes(currentPage) && linkPage === 'listing-product.html';
         const isStockPageActive = stockPages.includes(currentPage) && linkPage === 'stock-listing.html';
-        const isPnlReportPageActive = pnlReportPages.includes(currentPage) && linkPage === 'pnl-report.html';
-        const isRolePageActive = rolePages.includes(currentPage) && linkPage === 'manage-roles.html';
 
-        if (linkPage === currentPage || (linkPage === 'dashboard.html' && currentPage === '') || isVendorPageActive || isCustomerPageActive || isCategoryPageActive || isProductPageActive || isStockPageActive || isPnlReportPageActive || isRolePageActive) {
+        if (linkPage === currentPage || (linkPage === 'dashboard.html' && currentPage === '') || isVendorPageActive || isCustomerPageActive || isCategoryPageActive || isProductPageActive || isStockPageActive) {
             listItem.classList.add('active');
         } else {
             listItem.classList.remove('active');
@@ -321,7 +317,7 @@ function toggleBreakdown(rowId) {
         // Highlight current row
         this.classList.add('active-row');
 
-        // Create detail row containing the exact Multi-Invoices Breakdown subtable
+        // Create detail row containing the Multi-Invoices Breakdown subtable
         const detailRow = document.createElement('tr');
         detailRow.className = 'purchase-detail-row';
         
@@ -330,7 +326,7 @@ function toggleBreakdown(rowId) {
             <div class="purchase-subtable-container">
               <div class="purchase-subtable-title">Multi-Invoices Breakdown (${vendorName})</div>
               <div class="purchase-subtable table-responsive">
-                <table class="table mb-0">
+                <table class="table mb-0 purchase-subtable-box">
                   <thead>
                     <tr>
                       <th>SL</th>
@@ -339,36 +335,106 @@ function toggleBreakdown(rowId) {
                       <th>Products</th>
                       <th>Purchase/Return</th>
                       <th>Transaction Type</th>
-                      <th>Transection ID</th>
+                      <th>Transaction ID</th>
+                      <th>Payable Amount</th>
+                      <th>Paid Amount</th>
+                      <th>Open Balance</th>
+                      <th>Actions</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
                       <td>1</td>
                       <td>June 15, 2026</td>
-                      <td>N/A</td>
-                      <td>N/A</td>
-                      <td>N/A</td>
-                      <td>Bank Transfer</td>
-                      <td>TrX 6tgbGY7I89</td>
-                    </tr>
-                    <tr>
-                      <td>1</td>
-                      <td>June 15, 2026</td>
-                      <td><span class="dot-indicator"></span>Invoice - 0001</td>
+                      <td>INV-1001</td>
                       <td>3 Products</td>
                       <td><span class="purchase-report-status-badge">Purchase</span></td>
-                      <td>Cash</td>
-                      <td>N/A</td>
+                      <td>Bank Transfer</td>
+                      <td>TrX 6tgbGY7I89</td>
+                      <td>PKR 125,000</td>
+                      <td>PKR 100,000</td>
+                      <td>PKR 25,000</td>
+                      <td>
+                        <div class="purchase-subtable-actions">
+                          <button class="purchase-subtable-action-btn" type="button" aria-label="View details">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                              <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"></path>
+                              <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                          </button>
+                          <button class="purchase-subtable-action-btn delete" type="button" aria-label="Delete entry">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                              <path d="M3 6h18"></path>
+                              <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                              <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"></path>
+                              <path d="M10 11v6"></path>
+                              <path d="M14 11v6"></path>
+                            </svg>
+                          </button>
+                        </div>
+                      </td>
                     </tr>
                     <tr>
                       <td>2</td>
-                      <td>June 15, 2026</td>
-                      <td>Invoice - 0001</td>
+                      <td>June 16, 2026</td>
+                      <td>INV-1002</td>
                       <td>1 Product</td>
+                      <td><span class="purchase-report-status-badge">Return</span></td>
+                      <td>Cash</td>
+                      <td>TrX 9kL2mN4</td>
+                      <td>PKR 48,500</td>
+                      <td>PKR 48,500</td>
+                      <td>PKR 0</td>
+                      <td>
+                        <div class="purchase-subtable-actions">
+                          <button class="purchase-subtable-action-btn" type="button" aria-label="View details">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                              <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"></path>
+                              <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                          </button>
+                          <button class="purchase-subtable-action-btn delete" type="button" aria-label="Delete entry">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                              <path d="M3 6h18"></path>
+                              <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                              <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"></path>
+                              <path d="M10 11v6"></path>
+                              <path d="M14 11v6"></path>
+                            </svg>
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>June 17, 2026</td>
+                      <td>INV-1003</td>
+                      <td>2 Products</td>
                       <td><span class="purchase-report-status-badge">Purchase</span></td>
                       <td>Cash</td>
-                      <td>N/A</td>
+                      <td>TrX 2pQ8rT6</td>
+                      <td>PKR 92,000</td>
+                      <td>PKR 60,000</td>
+                      <td>PKR 32,000</td>
+                      <td>
+                        <div class="purchase-subtable-actions">
+                          <button class="purchase-subtable-action-btn" type="button" aria-label="View details">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                              <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"></path>
+                              <circle cx="12" cy="12" r="3"></circle>
+                            </svg>
+                          </button>
+                          <button class="purchase-subtable-action-btn delete" type="button" aria-label="Delete entry">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                              <path d="M3 6h18"></path>
+                              <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                              <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"></path>
+                              <path d="M10 11v6"></path>
+                              <path d="M14 11v6"></path>
+                            </svg>
+                          </button>
+                        </div>
+                      </td>
                     </tr>
                   </tbody>
                 </table>
@@ -383,87 +449,224 @@ function toggleBreakdown(rowId) {
     });
 
     // Search filter
-    const searchInput = document.getElementById('purchaseSearchInput');
-    searchInput.addEventListener('keyup', function() {
-      const filter = this.value.toLowerCase();
-      document.querySelectorAll('.purchase-detail-row').forEach(el => el.remove());
-      document.querySelectorAll('.purchase-report-row').forEach(row => {
-        row.classList.remove('active-row');
-        const text = row.textContent.toLowerCase();
-        row.style.display = text.includes(filter) ? '' : 'none';
+    const searchInput = document.getElementById('purchaseSearchInput') || document.getElementById('searchVendor');
+    if (searchInput) {
+      searchInput.addEventListener('keyup', function() {
+        const filter = this.value.toLowerCase();
+        document.querySelectorAll('.purchase-detail-row').forEach(el => el.remove());
+        document.querySelectorAll('.purchase-report-row').forEach(row => {
+          row.classList.remove('active-row');
+          const text = row.textContent.toLowerCase();
+          row.style.display = text.includes(filter) ? '' : 'none';
+        });
       });
-    });
-  });
-
-
-
-
-  const manageRolesDeleteModal = document.getElementById("manageRolesDeleteModal");
-const manageRolesCancelDelete = document.getElementById("manageRolesCancelDelete");
-const manageRolesConfirmDelete = document.getElementById("manageRolesConfirmDelete");
-
-const manageRolesDeleteButtons = document.querySelectorAll(
-    ".manage-roles-delete-btn"
-);
-
-manageRolesDeleteButtons.forEach(function (button) {
-
-    button.addEventListener("click", function () {
-        manageRolesDeleteModal.classList.add("show");
-    });
-
-});
-
-manageRolesCancelDelete.addEventListener("click", function () {
-    manageRolesDeleteModal.classList.remove("show");
-});
-
-manageRolesConfirmDelete.addEventListener("click", function () {
-    manageRolesDeleteModal.classList.remove("show");
-});
-
-
-const changePasswordForm = document.getElementById('changePasswordForm');
-  const passwordError = document.getElementById('passwordError');
-  const changePasswordModalEl = document.getElementById('changePasswordModal');
-  const changePasswordModal = new bootstrap.Modal(changePasswordModalEl);
-
-  changePasswordForm.addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    const currentPassword = document.getElementById('currentPassword').value;
-    const newPassword = document.getElementById('newPassword').value;
-    const confirmPassword = document.getElementById('confirmPassword').value;
-
-    if (newPassword !== confirmPassword) {
-      passwordError.style.display = 'block';
-      return;
     }
-
-    passwordError.style.display = 'none';
-
-    // ===== Replace this block with your actual API call =====
-    console.log('Updating password:', { currentPassword, newPassword });
-
-    // Example fetch call:
-    // fetch('/api/change-password', {
-    //   method: 'POST',
-    //   headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify({ currentPassword, newPassword })
-    // })
-    //   .then(res => res.json())
-    //   .then(data => {
-    //     changePasswordModal.hide();
-    //     changePasswordForm.reset();
-    //   })
-    //   .catch(err => console.error(err));
-
-    changePasswordModal.hide();
-    changePasswordForm.reset();
   });
 
-  // Reset form + hide error whenever modal is closed
-  changePasswordModalEl.addEventListener('hidden.bs.modal', function () {
-    changePasswordForm.reset();
-    passwordError.style.display = 'none';
+  document.addEventListener('DOMContentLoaded', function () {
+    const tables = Array.from(document.querySelectorAll('table.table'));
+
+    const findRoot = (table) => {
+      return table.closest('.plist-main-wrap, .vendor-panel, .inv-main-wrap, .purchase-report-card, .sdet-main-wrap, .table-card, .table-grid, .table-wrap, .purchase-report-table-wrapper') || table.parentElement;
+    };
+
+    const getPageInfoElement = (root) => {
+      return Array.from(root.querySelectorAll('span, div')).find(el => /Showing\s+\d+\s+to\s+\d+\s+of\s+\d+\s+entries/i.test(el.textContent.trim()));
+    };
+
+    const initDataTable = (table) => {
+      let root = findRoot(table);
+      if (!root) return;
+
+      // If the nearest wrapper is the table-specific wrapper, prefer the
+      // higher-level `.purchase-report-card` so controls (search/select)
+      // that are siblings of the wrapper are discovered properly.
+      if (root.classList && root.classList.contains('purchase-report-table-wrapper')) {
+        const parentCard = root.closest('.purchase-report-card');
+        if (parentCard) root = parentCard;
+      }
+
+      const disablePagination = document.body.classList.contains('dashboard-page');
+
+      // Broader search selectors to match different pages
+      let searchInput = root.querySelector('.search-box-inline input, .sdet-search-wrap input, .purchase-report-controls input, input[id*="search" i], input[class*="search" i], input[type="search"]');
+      // fallback to global IDs when controls are not direct descendants
+      if (!searchInput) searchInput = document.querySelector('#searchVendor') || document.querySelector('#purchaseSearchInput');
+
+      let pageSizeSelect = root.querySelector('select.form-select.form-select-sm, select#purchaseEntriesSelect, select#entries, select[class*="entry" i], select[id*="entries" i]');
+      if (!pageSizeSelect) pageSizeSelect = document.querySelector('#purchaseEntriesSelect') || document.querySelector('select.form-select.form-select-sm');
+      let pageInfo = getPageInfoElement(root);
+      let paginationList = root.querySelector('ul.pagination');
+      const paginationButtons = root.querySelector('.page-buttons');
+
+      // If no pagination or page-info exist, create footer controls only when page has neither
+      if (!pageInfo && !paginationList && !paginationButtons) {
+        const footer = document.createElement('div');
+        footer.className = 'data-table-footer d-flex justify-content-between align-items-center mt-2';
+
+        pageInfo = document.createElement('div');
+        pageInfo.className = 'data-table-page-info';
+        pageInfo.textContent = 'Showing 0 to 0 of 0 entries';
+
+        const nav = document.createElement('nav');
+        paginationList = document.createElement('ul');
+        paginationList.className = 'pagination pagination-sm mb-0';
+        nav.appendChild(paginationList);
+
+        footer.appendChild(pageInfo);
+        footer.appendChild(nav);
+
+        const tableWrapper = findRoot(table) || table.parentElement;
+        if (tableWrapper && tableWrapper.parentElement) {
+          tableWrapper.parentElement.insertBefore(footer, tableWrapper.nextSibling);
+        } else {
+          table.parentNode.insertBefore(footer, table.nextSibling);
+        }
+
+        // refresh references
+        pageInfo = getPageInfoElement(root) || pageInfo;
+        paginationList = root.querySelector('ul.pagination') || paginationList;
+      } else {
+        // If paginationList is missing but page uses .page-buttons, keep that and only ensure pageInfo exists
+        if (!pageInfo) {
+          pageInfo = document.createElement('div');
+          pageInfo.className = 'data-table-page-info';
+          pageInfo.textContent = 'Showing 0 to 0 of 0 entries';
+          if (paginationButtons && paginationButtons.parentElement) {
+            paginationButtons.parentElement.insertBefore(pageInfo, paginationButtons);
+          } else if (table.parentElement) {
+            table.parentElement.insertBefore(pageInfo, table.nextSibling);
+          }
+        }
+      }
+
+      const tbody = table.tBodies[0];
+      if (!tbody) return;
+
+      const rawRows = Array.from(tbody.querySelectorAll('tr'));
+      const allRows = rawRows.filter(row => !row.classList.contains('purchase-detail-row') && !row.id.startsWith('breakdown-row-') && !row.id.startsWith('report-breakdown-'));
+      let filteredRows = allRows.slice();
+      let currentPage = 1;
+      let pageSize = pageSizeSelect ? Number(pageSizeSelect.value) || 10 : 10;
+
+      const updateTable = () => {
+        const filterText = searchInput ? searchInput.value.toLowerCase().trim() : '';
+        filteredRows = allRows.filter(row => row.textContent.toLowerCase().includes(filterText));
+        const totalRows = filteredRows.length;
+        const totalPages = disablePagination ? 1 : Math.max(1, Math.ceil(totalRows / pageSize));
+        if (currentPage > totalPages) currentPage = totalPages;
+
+        const start = disablePagination ? 0 : (currentPage - 1) * pageSize;
+        const pageRows = disablePagination ? filteredRows : filteredRows.slice(start, start + pageSize);
+
+        allRows.forEach(row => {
+          row.style.display = pageRows.includes(row) ? '' : 'none';
+        });
+
+        if (pageInfo) {
+          const from = totalRows === 0 ? 0 : (disablePagination ? 1 : start + 1);
+          const to = disablePagination ? totalRows : Math.min(start + pageSize, totalRows);
+          pageInfo.textContent = `Showing ${from} to ${to} of ${totalRows} entries`;
+        }
+
+        renderPagination(totalPages);
+      };
+
+      const renderPagination = (totalPages) => {
+        if (disablePagination) {
+          if (paginationList) paginationList.style.display = 'none';
+          if (paginationButtons) paginationButtons.style.display = 'none';
+          return;
+        }
+
+        if (paginationList) {
+          paginationList.innerHTML = '';
+          const createPageItem = (text, page, disabled, active) => {
+            const li = document.createElement('li');
+            li.className = `page-item${disabled ? ' disabled' : ''}${active ? ' active' : ''}`;
+            const a = document.createElement('a');
+            a.className = 'page-link';
+            a.href = '#';
+            a.textContent = text;
+            a.dataset.page = page;
+            li.appendChild(a);
+            return li;
+          };
+
+          paginationList.appendChild(createPageItem('«', currentPage - 1, currentPage === 1, false));
+          for (let i = 1; i <= totalPages; i += 1) {
+            paginationList.appendChild(createPageItem(i.toString(), i, false, currentPage === i));
+          }
+          paginationList.appendChild(createPageItem('»', currentPage + 1, currentPage === totalPages, false));
+        }
+
+        if (paginationButtons) {
+          paginationButtons.innerHTML = '';
+
+          const createButton = (text, page, disabled, active) => {
+            const button = document.createElement('button');
+            button.type = 'button';
+            button.dataset.page = page;
+            button.className = `page-num${active ? ' active' : ''}`;
+            button.disabled = disabled;
+            button.textContent = text;
+            return button;
+          };
+
+          const prevBtn = createButton('‹', Math.max(1, currentPage - 1), currentPage === 1, false);
+          prevBtn.className = 'page-arrow';
+          paginationButtons.appendChild(prevBtn);
+
+          for (let i = 1; i <= totalPages; i += 1) {
+            paginationButtons.appendChild(createButton(i.toString(), i, false, currentPage === i));
+          }
+
+          const nextBtn = createButton('›', Math.min(totalPages, currentPage + 1), currentPage === totalPages, false);
+          nextBtn.className = 'page-arrow';
+          paginationButtons.appendChild(nextBtn);
+        }
+      };
+
+      const changePage = (page) => {
+        const totalPages = Math.max(1, Math.ceil(filteredRows.length / pageSize));
+        currentPage = Math.min(Math.max(1, page), totalPages);
+        updateTable();
+      };
+
+      if (searchInput) {
+        searchInput.addEventListener('input', () => {
+          currentPage = 1;
+          updateTable();
+        });
+      }
+
+      if (pageSizeSelect) {
+        pageSizeSelect.addEventListener('change', () => {
+          pageSize = Number(pageSizeSelect.value) || 10;
+          currentPage = 1;
+          updateTable();
+        });
+      }
+
+      if (paginationList && !disablePagination) {
+        paginationList.addEventListener('click', (event) => {
+          const target = event.target.closest('a[data-page]');
+          if (!target) return;
+          event.preventDefault();
+          changePage(Number(target.dataset.page));
+        });
+      }
+
+      if (paginationButtons && !disablePagination) {
+        paginationButtons.addEventListener('click', (event) => {
+          const target = event.target.closest('button[data-page]');
+          if (!target || target.disabled) return;
+          changePage(Number(target.dataset.page));
+        });
+      }
+
+      updateTable();
+    };
+
+    tables.forEach(initDataTable);
   });
